@@ -11,6 +11,48 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+		body {font-family: Arial;}
+
+		/* Style the tab */
+		.tab {
+		  overflow: hidden;
+		  border: none;
+		  background-color: #f1f1f1;
+		  height: 42px;
+		}
+
+		/* Style the buttons inside the tab */
+		.tab button {
+		  background-color: inherit;
+		  float: left;
+		  border: 1px solid #ccc;
+		  outline: none;
+		  cursor: pointer;
+		  padding: 12px 12px;
+		  transition: 0.3s;
+		  font-size: 14px;
+		}
+
+		/* Change background color of buttons on hover */
+		.tab button:hover {
+		  background-color: #ddd;
+		}
+
+		/* Create an active/current tablink class */
+		.tab button.active {
+		  background-color: #ccc;
+		}
+
+		/* Style the tab content */
+		.tabcontent {
+		  display: none;
+		  padding: 6px 12px;
+		  border: 1px solid #ccc;
+		  border-top: none;
+		}
+		</style>
 </head>
 
 <body>
@@ -86,38 +128,19 @@
 					《推荐系统：前沿与实践》</a>&nbsp;电子工业出版社
 			</p>
 			</div>
-			<!-- Research Interest 
-			<a name="int"></a>
-            <div id="interest">
-                <h2>Research Interests</h2>
-				<ul>
-					<li><b>Recommender Systems</b>: 
-						collaborative filtering, explainability, privacy, fairness
-					</li>
-					<li><b>Machine Learning</b>:
-						graph neural network, reinforcement learning, ensemble learning, learning theory
-					</li>
-					<li><b>Anomaly Detection</b>:
-						unsupervised anomaly detection, time series anomaly detection
-					</li>
-			</div>
-			-->
-			<!-- Professional Activities>
-			<a name="pro"></a>
-            <div id="professional">
-                <h2>Professional Activities</h2>
-				<p>
-				Dongsheng Li is member of CCF, ACM and IEEE. He serves as program committee member of AAAI 2017 and 2018. 
-				He also serves as reviewers for many top journals and conferences, e.g., Neurocomp, KBS, FGCS, IJCIS, IEEE Access, 
-				NIPS, AAAI, IJCAI, etc.
-				</p>
-			</div -->
-            <!-- Publications -->
 		
             <a name="pub"></a>
             <div id="publication">
-			<h3>Publication (selected)</h3>
-                <ul style="padding-left:10px;">
+			<h3>Publication (by category)</h3>
+				<!-- Tab links -->
+				<div class="tab">
+				  <button class="tablinks" onclick="openCity(event, 'rs')">Recommender System</button>
+				  <button class="tablinks" onclick="openCity(event, 'ml')">Machine Learning</button>
+				  <button class="tablinks" onclick="openCity(event, 'hl')">AI for Health</button>
+				</div>
+				
+				<div id="rs" class="tabcontent" style="display:block">
+				  <ul style="padding-left:10px;">
 					<!-- CIKM 2023 -->
 					<li><a href="http://recmind.cn/papers/placeholder.pdf">
 					AutoSeqRec: Autoencoder for Efficient Sequential Recommendation
@@ -133,6 +156,212 @@
                         <br>The 32nd ACM International Conference on Information and Knowledge Management <a>(CIKM)</a>. 2023
                         <br />
                     </li>
+					<!-- SIGIR 2023 -->
+					<li><a href="https://arxiv.org/pdf/2304.11528.pdf">
+					Triple Structural Information Modelling for Accurate, Explainable and Interactive Recommendation
+					</a>
+                        <br>Jiahao Liu, Dongsheng Li, Hansu Gu, Tun Lu, Peng Zhang, Li Shang and Ning Gu.
+                        <br>The 46th International ACM SIGIR Conference on Research and Development in Information Retrieval <a>(SIGIR)</a>. 2023
+                        <br />
+                    </li>
+					<!-- WWW 2023 -->
+					<li><a href="https://arxiv.org/pdf/2302.02113.pdf">
+					Personalized Graph Signal Processing for Collaborative Filtering</a>
+                        <br>Jiahao Liu, Dongsheng Li, Hansu Gu, Tun Lu, Peng Zhang, Li Shang and Ning Gu.
+                        <br>The Web Conference <a>(WWW)</a>. 2023
+                        <br />
+                    </li>					
+					<!-- WSDM 2023 -->
+					<li><a href="https://arxiv.org/pdf/2212.00522.pdf">
+					CL4CTR: A Contrastive Learning Framework for CTR Prediction</a>
+                        <br>Fangye Wang, Yingxu Wang, Dongsheng Li, Hansu Gu, Tun Lu, Peng Zhang, Ning Gu.
+                        <br>The 16th ACM International Conference on Web Search and Data Mining <a>(WSDM)</a>. 2023
+                        <br />
+                    </li>
+					<li><a href="http://recmind.cn/papers/freegem_nips22.pdf">
+					Parameter-free Dynamic Graph Embedding for Link Prediction</a>
+                        <br>Jiahao Liu, Dongsheng Li, Hansu Gu, Tun Lu, Peng Zhang, Ning Gu.
+                        <br>The Thirty-sixth Conference on Neural Information Processing Systems <a>(NeurIPS)</a>. 2022
+                        <br />
+                    </li>
+					<!-- SIGIR 2022 -->
+					<li><a href="http://recmind.cn/papers/frnet_sigir22.pdf">
+					Enhancing CTR Prediction with Context-Aware Feature Representation Learning</a>
+                        <br>Fangye Wang, Yingxu Wang, Dongsheng Li, Hansu Gu, Tun Lu, Peng Zhang, Ning Gu.
+                        <br>The 45th International ACM SIGIR Conference on Research and Development in Information Retrieval <a>(SIGIR)</a>. 2022
+                        <br />
+                    </li>					
+					<!-- WWW 2022 -->
+					<li><a href="http://recmind.cn/papers/mindsim_www22.pdf">
+					MINDSim: User Simulator for News Recommenders</a>
+                        <br>Xufang Luo, Zheng Liu, Shitao Xiao, Xing Xie and Dongsheng Li.
+                        <br>The Web Conference <a>(WWW)</a>. 2022
+                        <br />
+                    </li>					
+					<!-- WWW 2022 -->
+					<li><a href="http://recmind.cn/papers/r3_www22.pdf">
+					Accurate and Explainable Recommendation via Review Rationalization</a>
+                        <br>Sicheng Pan, Dongsheng Li, Hansu Gu, Tun Lu, Xufang Luo and Ning Gu.
+                        <br>The Web Conference <a>(WWW)</a>. 2022
+                        <br />
+                    </li>
+					<!-- WWW 2022 -->
+					<li><a href="http://recmind.cn/papers/fire_www22.pdf">
+					FIRE: Fast Incremental Recommendation with Graph Signal Processing</a>
+                        <br>Jiafeng Xia, Dongsheng Li, Hansu Gu, Jiahao Liu, Tun Lu and Ning Gu.
+                        <br>The Web Conference <a>(WWW)</a>. 2022
+                        <br />
+                    </li>					
+					<!-- CIKM 2021 -->
+					<li><a href="http://recmind.cn/papers/GCN_cikm21.pdf">How Powerful is Graph Convolution for Recommendation?</a>
+                        <br>Yifei Shen, Yongji Wu, Yao Zhang, Caihua Shan, Jun Zhang, B. Khaled Letaief and Dongsheng Li.
+                        <br>The 30th ACM International Conference on Information and Knowledge Management <a>(CIKM)</a>. 2021
+                        <br />
+                    </li>
+					<li><a href="http://recmind.cn/papers/IGCN_cikm21.pdf">Incremental Graph Convolutional Network for Collaborative Filtering</a>
+                        <br>Jiafeng Xia, Dongsheng Li, Hansu Gu, Tun Lu, Peng Zhang and Ning Gu.
+                        <br>The 30th ACM International Conference on Information and Knowledge Management <a>(CIKM)</a>. 2021
+                        <br />
+                    </li>
+					<li><a href="http://recmind.cn/papers/CoPE_cikm21.pdf">CoPE: Modeling Continuous Propagation and Evolution on Interaction Graph</a>
+                        <br>Yao Zhang, Yun Xiong, Dongsheng Li, Caihua Shan, Kan Ren and Yangyong Zhu.
+                        <br>The 30th ACM International Conference on Information and Knowledge Management <a>(CIKM)</a>. 2021
+                        <br />
+                    </li>				
+					<!-- TCYB 2021 -->
+					<li><a href="http://recmind.cn/papers/DGCF_tcyb21.pdf">Graph Collaborative Filtering based on Dual-Message Propagation Mechanism</a>
+                        <br>Haodong Liu, Bo Yang, Dongsheng Li.
+                        <br>IEEE Transactions on Cybernetics <a>(TCYB)</a>. 2021
+                        <br />
+                    </li>					
+					<!-- KDD 2021 -->
+					<li><a href="http://recmind.cn/papers/LSECGNN_kdd21.pdf">Leveraging Tripartite Interaction Information from Live Stream E-Commerce for Improving Product Recommendation</a>
+                        <br>Sanshi Yu, Zhuoxuan Jiang, Dongdong Chen, Shanshan Feng, Dongsheng Li, Qi Liu, Jinfeng Yi.
+                        <br>ACM SIGKDD Conference on Knowledge Discovery and Data Mining <a>(KDD)</a>. 2021
+                        <br />
+                    </li>					
+					<!-- DASFAA 2021 -->
+					<li><a href="http://recmind.cn/papers/sans_dasfaa21.pdf">SANS: Setwise Attentional Neural Similarity Method for Few-shot Recommendation</a>
+                        <br>Zhenghao Zhang, Tun Lu, Dongsheng Li, Peng Zhang, Hansu Gu, Ning Gu.
+                        <br>The 26th International Conference on Database Systems for Advanced Applications <a>(DASFAA)</a>, 2021
+                        <br />
+						<!--a href="http://recmind.cn/papers/sans_dasfaa21.pdf"><i class="fa fa-file-text"></i> paper
+                        </a-->
+                    </li>
+					<!-- TKDD 2021 -->
+					<li><a href="http://recmind.cn/papers/neuse_tkdd21.pdf">NeuSE: A Neural Snapshot Ensemble Method for Collaborative Filtering</a>
+                        <br> Dongsheng Li*, Haodong Liu*, Chao Chen, Yingying Zhao, Stephen M. Chu, Bo Yang.
+                        <br> ACM Transactions on Knowledge Discovery from Data <a>(TKDD)</a>, Volume 15Issue 6, 2021
+                        <br />
+						<!--a href="http://recmind.cn/papers/neuse_tkdd21.pdf"><i class="fa fa-file-text"></i> paper
+                        </a-->
+                    </li>
+					<!-- TKDE 2021 -->
+					<li><a href="http://recmind.cn/papers/s2p_tkde21.pdf">Modeling Dynamic User Preference via Dictionary Learning for Sequential Recommendation</a>
+                        <br> Chao Chen, Dongsheng Li*, Junchi Yan*, Xiaokang Yang.
+                        <br> IEEE Transactions on Knowledge and Data Engineering <a>(TKDE)</a>, 10.1109/TKDE.2021.3050407. 2021
+                        <br />
+                    </li>
+					<!-- AAAI 2021 -->
+					<li><a href="http://recmind.cn/papers/SGMC_AAAI21.pdf">Scalable and Explainable 1-Bit Matrix Completion via Graph Signal Learning</a>
+                        <br> Chao Chen, Dongsheng Li, Junchi Yan, Hanchi Huang, Xiaokang Yang.
+                        <br>The Thirty-Fifth AAAI Conference on Artificial Intelligence <a>(AAAI-21)</a>, 2021
+                        <br />
+                    </li>
+					<!-- TKDE 2019 -->
+					<li><a href="http://recmind.cn/papers/mma_tkde19.pdf">Mixture Matrix Approximation for Collaborative Filtering</a>
+                        <br> Dongsheng Li, Chao Chen, Tun Lu, Stephen M. Chu, Ning Gu.
+                        <br> IEEE Transactions on Knowledge and Data Engineering <a>(TKDE)</a>, Volume: 33, Issue: 6, 2021.
+                        <br />
+                    </li>					
+					<!-- SDM 2019 -->
+					<li><a href="http://recmind.cn/papers/norma_sdm19.pdf">Collaborative Filtering with Noisy Ratings</a>
+                        <br> Dongsheng Li, Chao Chen, Zhilin Gong, Tun Lu, Stephen M. Chu, Ning Gu.
+                        <br> 2019 SIAM International Conference on Data Mining <a>(SDM)</a>, 2019
+                        <br />						
+                    </li>					
+					<!-- WWW 2018 -->
+					<li><a href="http://recmind.cn/papers/adaerror_www18.pdf">AdaError: An Adaptive Learning Rate Method for Matrix Approximation-based Collaborative Filtering</a>
+                        <br> Dongsheng Li, Chao Chen, Qin Lv, Hansu Gu, Tun Lu, Li Shang, Ning Gu, Stephen M. Chu.
+                        <br> The Web Conference <a>(WWW)</a>, 2018
+                        <br />
+                    </li>
+					<!-- NIPS 2017 -->
+					<li><a href="http://recmind.cn/papers/mrma_nips17.pdf">Mixture-Rank Matrix Approximation for Collaborative Filtering</a>
+                        <br> Dongsheng Li, Chao Chen, Wei Liu, Tun Lu, Ning Gu, Stephen M. Chu.
+                        <br> Advances in Neural Information Processing Systems <a>(NIPS)</a>, 2017 
+                        <br />
+                    </li>
+                    <!-- AAAI 17 -->
+					<li><a href="http://recmind.cn/papers/ermma_aaai17.pdf">ERMMA: Expected Risk Minimization for Matrix Approximation-based Recommender Systems</a>
+                        <br> Dongsheng Li, Chao Chen, Qin Lv, Li Shang, Stephen M. Chu, Hongyuan Zha.
+                        <br> AAAI Conference on Artificial Intelligence <a href="http://www.aaai.org/Conferences/AAAI/aaai17.php">(AAAI)</a>, 2017
+                        <br />
+                    </li>
+                    <li><a href="">	GLOMA: Embedding Global Information in Local Matrix Approximation Models for Collaborative Filtering</a>
+                        <br> Chao Chen, Dongsheng Li*, Qin Lv, Junchi Yan, Li Shang, Stephen M. Chu
+                        <br> AAAI Conference on Artificial Intelligence <a href="http://www.aaai.org/Conferences/AAAI/aaai17.php">(AAAI)</a>, 2017 (*Corresponding Author)
+                        <br />
+                    </li>
+                    <!-- neurocmp 17 -->
+                    <li><a href="http://recmind.cn/papers/epp_neurocmp17.pdf">
+					Efficient Privacy-preserving Content Recommendation for Online Social Communities</a>
+                        <br> Dongsheng Li, Qin Lv, Li Shang, Ning Gu
+                        <br> Neurocomputing<a href="http://www.sciencedirect.com/science/journal/09252312"></a>, 2017
+                        <br />
+                    </li>                    
+                    <!-- icml 16 -->
+                    <li><a href="http://recmind.cn/papers/sma_icml16.pdf">Low-Rank
+							Matrix Approximation with Stability</a>
+                        <br> Dongsheng Li, Chao Chen, Qin Lv, Junchi Yan, Stephen Chu, Li Shang
+                        <br> International Conference on Machine Learning <a href="http://icml.cc/2016/">(ICML)</a>, 2016 <a href="https://github.com/ldscc/StableMA"> <i class="fa fa-archive"></i> code
+                        </a>
+                        <br />                        
+                    </li>
+                    <!-- ijcai 16 -->
+                    <li><a href="http://recmind.cn/papers/mpma_ijcai16.pdf">MPMA:
+							Mixture Probabilistic Matrix Approximation for Collaborative
+							Filtering</a>
+                        <br> Chao Chen*, Dongsheng Li*, Qin Lv, Junchi Yan, Stephen M. Chu, Li Shang
+                        <br>International Joint Conference on Artificial Intelligence <a href="http://ijcai-16.org/">(IJCAI)</a>, 2016 (*Equal Contribution)
+                        <br />
+                    </li>
+                    <!-- FGCS 16 -->
+                    <li><a href="http://recmind.cn/papers/ppcf_fgcs16.pdf">An
+							Algorithm for Efficient Privacy-preserving Item-based
+							Collaborative Filtering</a>
+                        <br> Dongsheng Li, Chao Chen, Qin Lv, Li Shang, Yingying Zhao, Tun Lu, Ning Gu
+                        <br>Future Generation Computer Systems <a href="http://www.journals.elsevier.com/future-generation-computer-systems/">(FGCS)</a>, 2016
+                        <br />
+                    </li>
+                    <!-- sigir 15 -->
+                    <li><a href="http://recmind.cn/papers/wemarec_sigir15.pdf">WEMAREC:
+							Accurate and Scalable Recommendation through Weighted and
+							Ensemble Matrix Approximation</a>
+                        <br> Chao Chen*, Dongsheng Li*, Yingying Zhao, Qin Lv, Li Shang
+                        <br>International Conference on Research and Development on Information Retrieval <a href="http://sigir2015.org/">(SIGIR)</a>, 2015 <a href="https://github.com/ldscc/StableMA"> <i class="fa fa-archive"></i> code
+                        </a>
+                        <br />
+                    </li>                    
+                    <!-- CIKM 11 -->
+                    <li><a href="http://recmind.cn/papers/yana_cikm11.pdf">
+                    YANA: An Efficient Privacy-preserving Recommender System for Online Social Communities</a>
+                        <br> Dongsheng Li, Qin Lv, Li Shang, Ning Gu
+                        <br> International Conference on Information and Knowledge Management <a href="http://www.cikm2011.org/">(CIKM)</a>, 2011
+                        <br />
+                    </li>
+                    <li><a href="http://recmind.cn/papers/pistis_waiat11.pdf">
+                    Pistis: A Privacy-preserving Content Recommender System for Online Social Communities</a>
+                        <br> Dongsheng Li, Qin Lv, Huanhuan Xia, Li Shang, Tun Lu, Ning Gu
+                        <br> International Conferences on Web Intelligence and Intelligent Agent Technology <a href="http://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=6036126">(WI-IAT)</a>, 2011
+                        <br />
+                    </li>                    
+                </ul>
+				</div>
+
+				<div id="ml" class="tabcontent" style="display:none">
+				  <ul style="padding-left:10px;">
+					
 					<!-- KDD 2023 -->
 					<li><a href="https://arxiv.org/pdf/2307.03119.pdf">
 					Learning Multi-Agent Intention-Aware Communication for Optimal Multi-Order Execution in Finance
@@ -140,23 +369,7 @@
                         <br>Yuchen Fang, Zhenggang Tang, Kan Ren, Weiqing Liu, Li Zhao, Jiang Bian, Dongsheng Li, Weinan Zhang, Yong Yu, Tie-Yan Liu.
                         <br>The 29th SIGKDD Conference on Knowledge Discovery and Data Mining <a>(KDD)</a>. 2023
                         <br />
-                    </li>
-					<!-- INTERSPEECH 2023 -->
-					<li><a href="https://arxiv.org/pdf/2306.02682.pdf">
-					End-to-End Word-Level Pronunciation Assessment with MASK Pre-training
-					</a>
-                        <br>Yukang Liang, Kaitao Song, Shaoguang Mao, Huiqiang Jiang, Luna Qiu, Yuqing Yang, Dongsheng Li, Linli Xu, Lili Qiu.
-                        <br>The 24th INTERSPEECH Conference <a>(INTERSPEECH)</a>. 2023
-                        <br />
-                    </li>
-					<!-- SMC 2023 -->
-					<li><a href="http://recmind.cn/papers/placeholder.pdf">
-					Protecting the Future: Neonatal Seizure Detection with Spatial-Temporal Modeling
-					</a>
-                        <br>Ziyue Li, Yuchen Fang, You Li, Kan Ren, Yansen Wang, Xufang Luo, Juanyong Duan, Congrui Huang, Dongsheng Li, Lili Qiu.
-                        <br>IEEE International Conference on Systems, Man, and Cybernetics <a>(SMC)</a>. 2023
-                        <br />
-                    </li>
+                    </li>					
 					<!-- ACL 2023 -->
 					<li><a href="https://arxiv.org/pdf/2211.07145.pdf">
 					Towards Understanding Omission in Dialogue Summarization
@@ -181,39 +394,6 @@
                         <br>The Fortieth International Conference on Machine Learning <a>(ICML)</a>. 2023
                         <br />
                     </li>
-					<!-- SIGIR 2023 -->
-					<li><a href="https://arxiv.org/pdf/2304.11528.pdf">
-					Triple Structural Information Modelling for Accurate, Explainable and Interactive Recommendation
-					</a>
-                        <br>Jiahao Liu, Dongsheng Li, Hansu Gu, Tun Lu, Peng Zhang, Li Shang and Ning Gu.
-                        <br>The 46th International ACM SIGIR Conference on Research and Development in Information Retrieval <a>(SIGIR)</a>. 2023
-                        <br />
-                    </li>
-					<!-- ICASSP 2023 -->
-					<li><a href="https://arxiv.org/pdf/2302.13748.pdf">
-					Unsupervised Video Anomaly Detection for Stereotypical Behaviours in Autism
-					</a>
-                        <br>Jiaqi Gao, Xinyang Jiang, Yuqing Yang, Dongsheng Li, Lili Qiu.
-                        <br>IEEE International Conference on Acoustics, Speech and Signal Processing <a>(ICASSP)</a>. 2023
-                        <br />
-                    </li>
-					<!-- ICASSP 2023 -->
-					<li><a href="https://arxiv.org/pdf/2303.08019.pdf">
-					Leveraging Pretrained Representations with Task-related Keywords for Alzheimer's Disease Detection
-					</a>
-                        <br>Jinchao Li, Kaitao Song, Junan Li, Bo Zheng, Dongsheng Li, Xixin Wu, Xunying Liu, Helen Meng.
-                        <br>IEEE International Conference on Acoustics, Speech and Signal Processing <a>(ICASSP)</a>. 2023
-                        <br />
-                    </li>
-					<!-- ICASSP 2023 -->
-					<li><a href="https://arxiv.org/pdf/2303.08027.pdf">
-					A Hierarchical Regression Chain Framework for Affective Vocal Burst Recognition
-					</a>
-                        <br>Jinchao Li, Xixin Wu, Kaitao Song, Dongsheng Li, Xunying Liu, Helen Meng.
-                        <br>IEEE International Conference on Acoustics, Speech and Signal Processing <a>(ICASSP)</a>. 2023
-                        <br />
-                    </li>
-					
 					<!-- TMM 2023 -->
 					<li><a href="https://arxiv.org/pdf/2208.02470.pdf">
 					Online Video Super-Resolution with Convolutional Kernel Bypass Grafts</a>
@@ -225,13 +405,6 @@
 					<li><a href="https://arxiv.org/pdf/2301.12458.pdf">
 					Self-supervised Semi-implicit Graph Variational Auto-encoders with Masking</a>
                         <br>Xiang Li, Tiandi Ye, Caihua Shan, Dongsheng Li and Ming Gao.
-                        <br>The Web Conference <a>(WWW)</a>. 2023
-                        <br />
-                    </li>
-					<!-- WWW 2023 -->
-					<li><a href="https://arxiv.org/pdf/2302.02113.pdf">
-					Personalized Graph Signal Processing for Collaborative Filtering</a>
-                        <br>Jiahao Liu, Dongsheng Li, Hansu Gu, Tun Lu, Peng Zhang, Li Shang and Ning Gu.
                         <br>The Web Conference <a>(WWW)</a>. 2023
                         <br />
                     </li>
@@ -298,13 +471,6 @@
                         <br>The 37th AAAI Conference on Artificial Intelligence <a>(AAAI)</a>. 2023
                         <br/>
                     </li>
-					<!-- WSDM 2023 -->
-					<li><a href="https://arxiv.org/pdf/2212.00522.pdf">
-					CL4CTR: A Contrastive Learning Framework for CTR Prediction</a>
-                        <br>Fangye Wang, Yingxu Wang, Dongsheng Li, Hansu Gu, Tun Lu, Peng Zhang, Ning Gu.
-                        <br>The 16th ACM International Conference on Web Search and Data Mining <a>(WSDM)</a>. 2023
-                        <br />
-                    </li>
 					<!-- IMWUT 2022 -->
 					<li><a href="https://dl.acm.org/doi/pdf/10.1145/3569490">
 						Unveiling Causal Attention in Dogs' Eyes with Smart Eyewear</a>
@@ -331,23 +497,10 @@
                         <br>The Thirty-sixth Conference on Neural Information Processing Systems <a>(NeurIPS)</a>. 2022
                         <br />
                     </li>
-					<li><a href="http://recmind.cn/papers/freegem_nips22.pdf">
-					Parameter-free Dynamic Graph Embedding for Link Prediction</a>
-                        <br>Jiahao Liu, Dongsheng Li, Hansu Gu, Tun Lu, Peng Zhang, Ning Gu.
-                        <br>The Thirty-sixth Conference on Neural Information Processing Systems <a>(NeurIPS)</a>. 2022
-                        <br />
-                    </li>
 					<li><a href="https://arxiv.org/pdf/2210.06041.pdf">
 					Reinforcement Learning with Automated Auxiliary Loss Search</a>
                         <br>Tairan He, Yuge Zhang, Kan Ren, Che Wang, Minghuan Liu, Weinan Zhang, Dongsheng Li, Yuqing Yang.
                         <br>The Thirty-sixth Conference on Neural Information Processing Systems <a>(NeurIPS)</a>. 2022
-                        <br />
-                    </li>
-					<!-- InterSpeech 2022 -->
-					<li><a href="https://arxiv.org/pdf/2208.05122.pdf">
-					Improving Hypernasality Estimation with Automatic Speech Recognition in Cleft Palate Speech</a>
-                        <br>Kaitao Song, Teng Wan, Bixia Wang, Huiqiang Jiang, Luna Qiu, Jiahang Xu, Liping Jiang, Qun Lou, Yuqing Yang, Dongsheng Li, Xudong Wang, Lili Qiu.
-                        <br>The 23rd Interspeech Conference <a>(INTERSPEECH)</a>. 2022
                         <br />
                     </li>
 					<!-- KDD 2022 -->
@@ -355,13 +508,6 @@
 					CMMD: Cross-Metric Multi-Dimensional Root Cause Analysis</a>
                         <br>Shifu Yan, Caihua Shan, Wenyi Yang, Bixiong Xu, Dongsheng Li, Lili Qiu, Jie Tong, Qi Zhang.
                         <br>The 28th ACM SIGKDD Conference on Knowledge Discovery and Data Mining <a>(KDD)</a>. 2022
-                        <br />
-                    </li>
-					<!-- Nature Cardio Res-->
-					<li><a href="https://www.researchgate.net/publication/360493842_Metabolic_characterization_of_hypertrophic_cardiomyopathy_in_human_heart#fullTextFileContent">
-					Metabolic characterization of hypertrophic cardiomyopathy in human heart</a>
-                        <br>Wenmin Wang, Jizheng Wang, Ke Yao, Shuiyun Wang, Meng Nie, Yizi Zhao, Bohong Wang, Huanhuan Pang, Jingjing Xu, Guixin Wu, Minjie Lu, Nan Tang, Chunmei Qi, Hengzhi Pei, Xufang Luo, Dongsheng Li, Tianshu Yang, Qing Sun, Xiang Wei, Yan Li, Dingsheng Jiang, Peng Li, Lei Song, Zeping Hu.
-                        <br>Nature Cardiovascular Research. 2022
                         <br />
                     </li>
 					<!-- ICML 2022 -->
@@ -376,13 +522,6 @@
 					Towards Applicable Reinforcement Learning: Improving the Generalization and Sample Efficiency with Policy Ensemble</a>
                         <br>Zhengyu Yang, Kan Ren, Xufang Luo, Minghuan Liu, Weiqing Liu, Jiang Bian, Weinan Zhang, Dongsheng Li.
                         <br>The 31st International Joint Conference on Artificial Intelligence <a>(IJCAI)</a>. 2022
-                        <br />
-                    </li>
-					<!-- SIGIR 2022 -->
-					<li><a href="http://recmind.cn/papers/frnet_sigir22.pdf">
-					Enhancing CTR Prediction with Context-Aware Feature Representation Learning</a>
-                        <br>Fangye Wang, Yingxu Wang, Dongsheng Li, Hansu Gu, Tun Lu, Peng Zhang, Ning Gu.
-                        <br>The 45th International ACM SIGIR Conference on Research and Development in Information Retrieval <a>(SIGIR)</a>. 2022
                         <br />
                     </li>
 					<!-- CVPR 2022 -->
@@ -405,388 +544,145 @@
                         <br>Yixuan Chen, Yubin Shi, Dongsheng Li, Yujiang Wang, Mingzhi Dong, Yingying Zhao, Robert Dick, Qin Lv, Fan Yang, Li Shang.
                         <br>The Tenth International Conference on Learning Representations <a>(ICLR)</a>. 2022
                         <br />
-                    </li>
-					<!-- WWW 2022 -->
-					<li><a href="http://recmind.cn/papers/mindsim_www22.pdf">
-					MINDSim: User Simulator for News Recommenders</a>
-                        <br>Xufang Luo, Zheng Liu, Shitao Xiao, Xing Xie and Dongsheng Li.
-                        <br>The Web Conference <a>(WWW)</a>. 2022
-                        <br />
-						<!--a href="http://recmind.cn/papers/CoPE_cikm21.pdf"><i class="fa fa-file-text"></i> paper
-                        </a-->
-                    </li>
+                    </li>					
 					<!-- WWW 2022 -->
 					<li><a href="http://recmind.cn/papers/cafe_www22.pdf">
 					Cross-Modal Ambiguity Learning for Multimodal Fake News Detection</a>
                         <br>Yixuan Chen, Dongsheng Li, Peng Zhang, Jie Sui, Qin Lv, Lu Tun and Li Shang.
                         <br>The Web Conference <a>(WWW)</a>. 2022
                         <br />
-						<!--a href="http://recmind.cn/papers/CoPE_cikm21.pdf"><i class="fa fa-file-text"></i> paper
-                        </a-->
-                    </li>
-					<!-- WWW 2022 -->
-					<li><a href="http://recmind.cn/papers/r3_www22.pdf">
-					Accurate and Explainable Recommendation via Review Rationalization</a>
-                        <br>Sicheng Pan, Dongsheng Li, Hansu Gu, Tun Lu, Xufang Luo and Ning Gu.
-                        <br>The Web Conference <a>(WWW)</a>. 2022
-                        <br />
-						<!--a href="http://recmind.cn/papers/CoPE_cikm21.pdf"><i class="fa fa-file-text"></i> paper
-                        </a-->
-                    </li>
-					<!-- WWW 2022 -->
-					<li><a href="http://recmind.cn/papers/fire_www22.pdf">
-					FIRE: Fast Incremental Recommendation with Graph Signal Processing</a>
-                        <br>Jiafeng Xia, Dongsheng Li, Hansu Gu, Jiahao Liu, Tun Lu and Ning Gu.
-                        <br>The Web Conference <a>(WWW)</a>. 2022
-                        <br />
-						<!--a href="http://recmind.cn/papers/CoPE_cikm21.pdf"><i class="fa fa-file-text"></i> paper
-                        </a-->
-                    </li>
+                    </li>					
 					<!-- AAAI 2022 -->
 					<li><a href="http://recmind.cn/papers/npcdde_aaai22.pdf">Neural Piecewise-Constant Delay Differential Equations</a>
                         <br>Qunxi Zhu, Yifei Shen, Dongsheng Li, Wei Lin.
                         <br>Thirty-Sixth AAAI Conference on Artificial Intelligence <a>(AAAI)</a>. 2022
                         <br />
-						<!--a href="http://recmind.cn/papers/CoPE_cikm21.pdf"><i class="fa fa-file-text"></i> paper
-                        </a-->
                     </li>
 					<!-- AAAI 2022 -->
 					<li><a href="http://recmind.cn/papers/iib_aaai22.pdf">Invariant Information Bottleneck for Domain Generalization</a>
                         <br>Bo Li, Yifei Shen, Yezhen Wang, Wenzhen Zhu, Colorado J. Reed, Jun Zhang, Dongsheng Li, Kurt Keutzer, Han Zhao.
                         <br>Thirty-Sixth AAAI Conference on Artificial Intelligence <a>(AAAI)</a>. 2022
                         <br />
-						<!--a href="http://recmind.cn/papers/CoPE_cikm21.pdf"><i class="fa fa-file-text"></i> paper
-                        </a-->
                     </li>
 					<!-- NIPS 2021 -->
 					<li><a href="http://recmind.cn/papers/yolat_nips21.pdf">Recognizing Vector Graphics without Rasterization</a>
                         <br>Xinyang Jiang, Lu Liu, Caihua Shan, Yifei Shen, Xuanyi Dong, Dongsheng Li.
                         <br>The 2021 Conference on Neural Information Processing Systems <a>(NeurIPS)</a>. 2021
                         <br />
-						<!--a href="http://recmind.cn/papers/CoPE_cikm21.pdf"><i class="fa fa-file-text"></i> paper
-                        </a-->
                     </li>
 					<!-- NIPS 2021 -->
 					<li><a href="http://recmind.cn/papers/explainer_nips21.pdf">Reinforcement Learning Enhanced Explainer for Graph Neural Networks</a>
                         <br>Caihua Shan, Yifei Shen, Yao Zhang, Xiang Li, Dongsheng Li.
                         <br>The 2021 Conference on Neural Information Processing Systems <a>(NeurIPS)</a>. 2021
                         <br />
-						<!--a href="http://recmind.cn/papers/CoPE_cikm21.pdf"><i class="fa fa-file-text"></i> paper
-                        </a-->
                     </li>
 					<!-- ICDM 2021 -->
 					<li><a href="http://recmind.cn/papers/RTSGAN_icdm21.pdf">Towards Generating Real-World Time Series Data</a>
                         <br>Hengzhi Pei, Kan Ren, Yuqing Yang, Chang Liu, Tao Qin, and Dongsheng Li.
                         <br>The 21st IEEE International Conference on Data Mining <a>(ICDM)</a>. 2021
                         <br />
-						<!--a href="http://recmind.cn/papers/CoPE_cikm21.pdf"><i class="fa fa-file-text"></i> paper
-                        </a-->
-                    </li>
-					<!-- CIKM 2021 -->
-					<li><a href="http://recmind.cn/papers/GCN_cikm21.pdf">How Powerful is Graph Convolution for Recommendation?</a>
-                        <br>Yifei Shen, Yongji Wu, Yao Zhang, Caihua Shan, Jun Zhang, B. Khaled Letaief and Dongsheng Li.
-                        <br>The 30th ACM International Conference on Information and Knowledge Management <a>(CIKM)</a>. 2021
-                        <br />
-						<!--a href="http://recmind.cn/papers/CoPE_cikm21.pdf"><i class="fa fa-file-text"></i> paper
-                        </a-->
-                    </li>
-					<li><a href="http://recmind.cn/papers/IGCN_cikm21.pdf">Incremental Graph Convolutional Network for Collaborative Filtering</a>
-                        <br>Jiafeng Xia, Dongsheng Li, Hansu Gu, Tun Lu, Peng Zhang and Ning Gu.
-                        <br>The 30th ACM International Conference on Information and Knowledge Management <a>(CIKM)</a>. 2021
-                        <br />
-						<!--a href="http://recmind.cn/papers/IGCN_cikm21.pdf"><i class="fa fa-file-text"></i> paper
-                        </a-->
-                    </li>
-					<li><a href="http://recmind.cn/papers/CoPE_cikm21.pdf">CoPE: Modeling Continuous Propagation and Evolution on Interaction Graph</a>
-                        <br>Yao Zhang, Yun Xiong, Dongsheng Li, Caihua Shan, Kan Ren and Yangyong Zhu.
-                        <br>The 30th ACM International Conference on Information and Knowledge Management <a>(CIKM)</a>. 2021
-                        <br />
-						<!--a href="http://recmind.cn/papers/CoPE_cikm21.pdf"><i class="fa fa-file-text"></i> paper
-                        </a-->
-                    </li>
+                    </li>					
 					<!-- ICCV 2021 -->
 					<li><a href="http://recmind.cn/papers/EOW_iccv21.pdf">Energy-Based Open-World Uncertainty Modeling for Confidence Calibration</a>
                         <br>Yezhen Wang, Bo Li, Tong Che, Kaiyang Zhou, Ziwei Liu, Dongsheng Li.
                         <br>International Conference on Computer Vision <a>(ICCV)</a>. 2021
                         <br />
-						<!--a href="http://recmind.cn/papers/EOW_iccv21.pdf"><i class="fa fa-file-text"></i> paper
-                        </a-->
-                    </li>
-					<!-- TCYB 2021 -->
-					<li><a href="http://recmind.cn/papers/DGCF_tcyb21.pdf">Graph Collaborative Filtering based on Dual-Message Propagation Mechanism</a>
-                        <br>Haodong Liu, Bo Yang, Dongsheng Li.
-                        <br>IEEE Transactions on Cybernetics <a>(TCYB)</a>. 2021
-                        <br />
-						<!--a href="http://recmind.cn/papers/DGCF_tcyb21.pdf"><i class="fa fa-file-text"></i> paper
-                        </a-->
-                    </li>
-					<!-- PNAS 2021 -->
-					<li><a href="http://recmind.cn/papers/PNAS21.pdf">Predicting the effect of confinement on the COVID-19 spread using machine learning enriched with satellite air pollution observations.</a>
-                        <br>Xing, X., Xiong, Y., Yang, R., Wang, R., Wang, W., Kan, H., Lu, T., Li, D., Cao, J., Peñuelas, J., Ciais, P., Bauer, N., Boucher, O., Balkanski, Y., Hauglustaine, D., Brasseur, G., Morawska, L., Janssens. I.A., Wang, X., Sardans, J., Wang, Y., Deng, Y., Wang, L., Chen, J., Tang, X., Zhang, R.
-                        <br>Proceedings of the National Academy of Sciences <a>(PNAS)</a>. 2021
-                        <br />
-						<!--a href="http://recmind.cn/papers/PANS21.pdf"><i class="fa fa-file-text"></i> paper
-                        </a-->
-                    </li>
-					<!-- KDD 2021 -->
-					<li><a href="http://recmind.cn/papers/LSECGNN_kdd21.pdf">Leveraging Tripartite Interaction Information from Live Stream E-Commerce for Improving Product Recommendation</a>
-                        <br>Sanshi Yu, Zhuoxuan Jiang, Dongdong Chen, Shanshan Feng, Dongsheng Li, Qi Liu, Jinfeng Yi.
-                        <br>ACM SIGKDD Conference on Knowledge Discovery and Data Mining <a>(KDD)</a>. 2021
-                        <br />
-						<!--a href="http://recmind.cn/papers/LSECGNN_kdd21.pdf"><i class="fa fa-file-text"></i> paper
-                        </a-->
-                    </li>
-					<!-- CDC 2021 
-					<li><a href="http://recmind.cn/papers/ugnn_cdc21.pdf">Decentralized Statistical Inference with Unrolled Graph Neural Networks</a>
-                        <br>He Wang, Yifei Shen, Ziyuan Wang, Dongsheng Li, Jun Zhang, Khaled B. Letaief, Jie Lu.
-                        <br> The 60th Conference on Decision and Control. 2021
-                        <br />
-                    </li>-->
+                    </li>					
 					<!-- IEEE TMM 2021 -->
 					<li><a href="http://recmind.cn/papers/mtva_tmm21.pdf">A Reinforcement-Learning-Based Energy-Efficient Framework for Multi-Task Video Analytics Pipeline</a>
                         <br>Yingying Zhao, Mingzhi Dong, Yujiang Wang, Da Feng, Qin Lv, Robert Dick, Dongsheng Li, Tun Lu, Ning Gu, Li Shang.
                         <br> IEEE Transactions on Multimedia <a>(TMM)</a>, 2021
                         <br />
-						<!--a href="http://recmind.cn/papers/mtva_tmm21.pdf"><i class="fa fa-file-text"></i> paper
-                        </a-->
                     </li>
-					<!-- ICME 2021 
-					<li><a href="http://recmind.cn/papers/ccb_icme21.pdf">Learning content and context with language bias for Visual Question Answering</a>
-                        <br> Chao Yang, Su Feng, Dongsheng Li, Huawei Shen, Guoqing Wang, Bin Jiang.
-                        <br> IEEE International Conference on Multimedia and Expo <a>(ICME)</a>, 2021
-                        <br />
-                    </li>-->
 					<!-- CVPR 2021 -->
 					<li><a href="http://recmind.cn/papers/lirr_cvpr21.pdf">Learning Invariant Representations and Risks
 					for Semi-supervised Domain Adaptation</a>
                         <br> Bo Li, Yezhen Wang, Shanghang Zhang, Dongsheng Li, Trevor Darrell, Kurt Keutzer, Han Zhao.
                         <br> The Conference on Computer Vision and Pattern Recognition <a>(CVPR)</a>, 2021
                         <br />
-						<!--a href="http://recmind.cn/papers/lirr_cvpr21.pdf"><i class="fa fa-file-text"></i> paper
-                        </a-->
-                    </li>
-					<!-- DASFAA 2021 -->
-					<li><a href="http://recmind.cn/papers/sans_dasfaa21.pdf">SANS: Setwise Attentional Neural Similarity Method for Few-shot Recommendation</a>
-                        <br>Zhenghao Zhang, Tun Lu, Dongsheng Li, Peng Zhang, Hansu Gu, Ning Gu.
-                        <br>The 26th International Conference on Database Systems for Advanced Applications <a>(DASFAA)</a>, 2021
-                        <br />
-						<!--a href="http://recmind.cn/papers/sans_dasfaa21.pdf"><i class="fa fa-file-text"></i> paper
-                        </a-->
-                    </li>
-					<!-- TKDD 2021 -->
-					<li><a href="http://recmind.cn/papers/neuse_tkdd21.pdf">NeuSE: A Neural Snapshot Ensemble Method for Collaborative Filtering</a>
-                        <br> Dongsheng Li*, Haodong Liu*, Chao Chen, Yingying Zhao, Stephen M. Chu, Bo Yang.
-                        <br> ACM Transactions on Knowledge Discovery from Data <a>(TKDD)</a>, Volume 15Issue 6, 2021
-                        <br />
-						<!--a href="http://recmind.cn/papers/neuse_tkdd21.pdf"><i class="fa fa-file-text"></i> paper
-                        </a-->
-                    </li>
-					<!-- TKDE 2021 -->
-					<li><a href="http://recmind.cn/papers/s2p_tkde21.pdf">Modeling Dynamic User Preference via Dictionary Learning for Sequential Recommendation</a>
-                        <br> Chao Chen, Dongsheng Li*, Junchi Yan*, Xiaokang Yang.
-                        <br> IEEE Transactions on Knowledge and Data Engineering <a>(TKDE)</a>, 10.1109/TKDE.2021.3050407. 2021
-                        <br />
-						<!--a href="http://recmind.cn/papers/s2p_tkde21.pdf"><i class="fa fa-file-text"></i> paper
-                        </a-->
-                    </li>
-					<!-- AAAI 2021 -->
-					<li><a href="http://recmind.cn/papers/SGMC_AAAI21.pdf">Scalable and Explainable 1-Bit Matrix Completion via Graph Signal Learning</a>
-                        <br> Chao Chen, Dongsheng Li, Junchi Yan, Hanchi Huang, Xiaokang Yang.
-                        <br>The Thirty-Fifth AAAI Conference on Artificial Intelligence <a>(AAAI-21)</a>, 2021
-                        <br />
-						<!--a href="http://recmind.cn/papers/SGMC_AAAI21.pdf"> <i class="fa fa-file-text"></i> paper
-                        </a-->
-                    </li>
-					<!-- TKDE 2019 -->
-					<li><a href="http://recmind.cn/papers/mma_tkde19.pdf">Mixture Matrix Approximation for Collaborative Filtering</a>
-                        <br> Dongsheng Li, Chao Chen, Tun Lu, Stephen M. Chu, Ning Gu.
-                        <br> IEEE Transactions on Knowledge and Data Engineering <a>(TKDE)</a>, Volume: 33, Issue: 6, 2021.
-                        <br />
-						<!--a href="http://recmind.cn/papers/mma_tkde19.pdf"><i class="fa fa-file-text"></i> paper
-                        </a-->
                     </li>
 					<!-- TSTE 2020 -->
 					<li><a href="http://recmind.cn/papers/cfd_tste20.pdf">Collaborative Fault Detection for Large-scale Photovoltaic Systems</a>
                         <br> Yingying Zhao, Dongsheng Li, Tun Lu, Qin Lv, Li Shang, Ning Gu.
                         <br>IEEE Transactions on Sustainable Energy <a>(TSTE)</a>, Volume: 11, Issue: 4, 2020
                         <br />
-						<!--a href="http://recmind.cn/papers/cfd_tste20.pdf"> <i class="fa fa-file-text"></i> paper
-                        </a-->
-                    </li>
-					<!-- SDM 2019 -->
-					<li><a href="http://recmind.cn/papers/norma_sdm19.pdf">Collaborative Filtering with Noisy Ratings</a>
-                        <br> Dongsheng Li, Chao Chen, Zhilin Gong, Tun Lu, Stephen M. Chu, Ning Gu.
-                        <br> 2019 SIAM International Conference on Data Mining <a>(SDM)</a>, 2019
-                        <br />
-						<!--a href="http://recmind.cn/papers/norma_sdm19.pdf"> <i class="fa fa-file-text"></i> paper
-                        </a-->
-                    </li>
-					<!-- TSTE 2019 -->
+                    </li>					
 					<li><a href="http://recmind.cn/papers/had_tste18.pdf">Hierarchical Anomaly Detection and Multimodal Classification in Large-Scale Photovoltaic Systems</a>
                         <br> Yingying Zhao, Qi Liu, Dongsheng Li, Dahai Kang, Qin Lv, Li Shang.
                         <br>IEEE Transactions on Sustainable Energy <a>(TSTE)</a>, Volume: 10, Issue: 3, 2019
                         <br />
-						<!--a href="http://recmind.cn/papers/had_tste18.pdf"> <i class="fa fa-file-text"></i> paper
-                        </a-->
-                    </li>
-					<!-- WWW 2018 -->
-					<li><a href="http://recmind.cn/papers/adaerror_www18.pdf">AdaError: An Adaptive Learning Rate Method for Matrix Approximation-based Collaborative Filtering</a>
-                        <br> Dongsheng Li, Chao Chen, Qin Lv, Hansu Gu, Tun Lu, Li Shang, Ning Gu, Stephen M. Chu.
-                        <br> The Web Conference <a>(WWW)</a>, 2018
-                        <br />
-						<!--a href="http://recmind.cn/papers/adaerror_www18.pdf"> <i class="fa fa-file-text"></i> paper
-                        </a-->
-                    </li>
-					<!-- NIPS 2017 -->
-					<li><a href="http://recmind.cn/papers/mrma_nips17.pdf">Mixture-Rank Matrix Approximation for Collaborative Filtering</a>
-                        <br> Dongsheng Li, Chao Chen, Wei Liu, Tun Lu, Ning Gu, Stephen M. Chu.
-                        <br> Advances in Neural Information Processing Systems <a>(NIPS)</a>, 2017 
-                        <br />
-						<!--a href="http://recmind.cn/papers/mrma_nips17.pdf"> <i class="fa fa-file-text"></i> paper
-                        </a-->
-                    </li>
-                    <!-- AAAI 17 -->
-					<li><a href="http://recmind.cn/papers/ermma_aaai17.pdf">ERMMA: Expected Risk Minimization for Matrix Approximation-based Recommender Systems</a>
-                        <br> Dongsheng Li, Chao Chen, Qin Lv, Li Shang, Stephen M. Chu, Hongyuan Zha.
-                        <br> AAAI Conference on Artificial Intelligence <a href="http://www.aaai.org/Conferences/AAAI/aaai17.php">(AAAI)</a>, 2017
-                        <br />
-						<!--a href="http://recmind.cn/papers/ermma_aaai17.pdf"> <i class="fa fa-file-text"></i> paper
-                        </a-->
-                    </li>
-                    <li><a href="">	GLOMA: Embedding Global Information in Local Matrix Approximation Models for Collaborative Filtering</a>
-                        <br> Chao Chen, Dongsheng Li*, Qin Lv, Junchi Yan, Li Shang, Stephen M. Chu
-                        <br> AAAI Conference on Artificial Intelligence <a href="http://www.aaai.org/Conferences/AAAI/aaai17.php">(AAAI)</a>, 2017 (*Corresponding Author)
-                        <br />
-						<!--a href="http://recmind.cn/papers/gloma_aaai17.pdf"> <i class="fa fa-file-text"></i> paper
-                        </a-->
-                    </li>
-                    <!-- neurocmp 17 -->
-                    <li><a href="http://recmind.cn/papers/epp_neurocmp17.pdf">
-					Efficient Privacy-preserving Content Recommendation for Online Social Communities</a>
-                        <br> Dongsheng Li, Qin Lv, Li Shang, Ning Gu
-                        <br> Neurocomputing<a href="http://www.sciencedirect.com/science/journal/09252312"></a>, 2017
-                        <br />
-                        <!--a href="http://recmind.cn/papers/epp_neurocmp17.pdf"> <i class="fa fa-file-text"></i> paper
-                        </a-->
-                    </li>
-                    <!-- KBS 16 
-                    <li><a href="http://recmind.cn/papers/salesexp_kbs16.pdf">
-                    SalesExplorer: Exploring Sales Opportunities from White-space Customers in The Enterprise Market</a>
-                        <br> Dongsheng Li, Yaoping Ruan, Qin Lv, Li Shang
-                        <br> Knowledge-Based Systems <a href="https://www.journals.elsevier.com/knowledge-based-systems">(KBS)</a>, 2016
-                        <br />
-                        <a href="http://recmind.cn/papers/salesexp_kbs16.pdf"> <i class="fa fa-file-text"></i> paper
-                        </a>
-                    </li>-->
-                    <!-- icml 16 -->
-                    <li><a href="http://recmind.cn/papers/sma_icml16.pdf">Low-Rank
-							Matrix Approximation with Stability</a>
-                        <br> Dongsheng Li, Chao Chen, Qin Lv, Junchi Yan, Stephen Chu, Li Shang
-                        <br> International Conference on Machine Learning <a href="http://icml.cc/2016/">(ICML)</a>, 2016 <a href="https://github.com/ldscc/StableMA"> <i class="fa fa-archive"></i> code
-                        </a>
-                        <br />
-                        <!--a href="http://recmind.cn/papers/sma_icml16.pdf"> <i class="fa fa-file-text"></i> paper
-                        </a>,
-                        <a href="http://recmind.cn/slides/sma_icml16_talk.pdf"> <i class="fa fa-television"></i> slides
-                        </a>,
-                        <a href="https://github.com/ldscc/StableMA"> <i class="fa fa-archive"></i> code
-                        </a-->
-                    </li>
-                    <!-- ijcai 16 -->
-                    <li><a href="http://recmind.cn/papers/mpma_ijcai16.pdf">MPMA:
-							Mixture Probabilistic Matrix Approximation for Collaborative
-							Filtering</a>
-                        <br> Chao Chen*, Dongsheng Li*, Qin Lv, Junchi Yan, Stephen M. Chu, Li Shang
-                        <br>International Joint Conference on Artificial Intelligence <a href="http://ijcai-16.org/">(IJCAI)</a>, 2016 (*Equal Contribution)
-                        <br />
-                        <!--a href="http://recmind.cn/papers/mpma_ijcai16.pdf">
-                            <i class="fa fa-file-text"></i> paper
-                        </a>,
-                        <a href="http://recmind.cn/slides/mpma_ijcai16_talk.pdf"> <i class="fa fa-television"></i> slides
-                        </a-->
-                    </li>
-                    <!-- FGCS 16 -->
-                    <li><a href="http://recmind.cn/papers/ppcf_fgcs16.pdf">An
-							Algorithm for Efficient Privacy-preserving Item-based
-							Collaborative Filtering</a>
-                        <br> Dongsheng Li, Chao Chen, Qin Lv, Li Shang, Yingying Zhao, Tun Lu, Ning Gu
-                        <br>Future Generation Computer Systems <a href="http://www.journals.elsevier.com/future-generation-computer-systems/">(FGCS)</a>, 2016
-                        <br />
-                        <!--a href="http://recmind.cn/papers/ppcf_fgcs16.pdf">
-                            <i class="fa fa-file-text"></i> paper
-                        </a-->
-                    </li>
-                    <!-- sigir 15 -->
-                    <li><a href="http://recmind.cn/papers/wemarec_sigir15.pdf">WEMAREC:
-							Accurate and Scalable Recommendation through Weighted and
-							Ensemble Matrix Approximation</a>
-                        <br> Chao Chen*, Dongsheng Li*, Yingying Zhao, Qin Lv, Li Shang
-                        <br>International Conference on Research and Development on Information Retrieval <a href="http://sigir2015.org/">(SIGIR)</a>, 2015 <a href="https://github.com/ldscc/StableMA"> <i class="fa fa-archive"></i> code
-                        </a>
-                        <br />
-                        <!--a href="http://recmind.cn/papers/wemarec_sigir15.pdf"> <i class="fa fa-file-text"></i> paper
-                        </a>,
-                        <a href="http://recmind.cn/slides/wemarec_sigir15_talk.pdf">
-                            <i class="fa fa-television"></i> slides
-                        </a>,
-                        <a href="https://github.com/ldscc/StableMA"> <i class="fa fa-archive"></i> code
-                        </a-->
-                    </li>
-                    <!-- kbs 14 
-                    <li><a href="http://recmind.cn/papers/itembasedpp_kbs14.pdf">
-                    Item-based Top-N Recommendation Resilient to Aggregated Information Revelation</a>
-                        <br> Dongsheng Li, Qin Lv, Li Shang, Ning Gu
-                        <br> Knowledge-Based Systems <a href="https://www.journals.elsevier.com/knowledge-based-systems">(KBS)</a>, 2014
-                        <br />
-                        <a href="http://recmind.cn/papers/itembasedpp_kbs14.pdf"> <i class="fa fa-file-text"></i> paper
-                        </a>
-                    </li>-->
-                    <!-- cscwd 13 
-                    <li><a href="http://recmind.cn/papers/aoput_cscwd13.pdf">
-                    AOPUT: A Recommendation Framework Based on Social Activities and Content Interests</a>
-                        <br> Yingying Deng, Tun Lu, Huanhuan Xia, Dongsheng Li, Tiejiang Liu, Xianghua Ding, Ning Gu
-                        <br> International Conference on Computer Supported Cooperative Work in Design <a href="http://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=6573246">(CSCWD)</a>, 2013
-                        <br />
-                        <a href="http://recmind.cn/papers/aoput_cscwd13.pdf"> <i class="fa fa-file-text"></i> paper
-                        </a>
-                    </li>-->
-                    <!-- kbs 12 
-                    <li><a href="http://recmind.cn/papers/ibcontent_kbs12.pdf">
-                    Interest-based real-time Content Recommendation in Online Social Communities</a>
-                        <br> Dongsheng Li, Qin Lv, Xing Xie, Li Shang, Huanhuan Xia, Tun Lu, Ning Gu
-                        <br> Knowledge-Based Systems <a href="https://www.journals.elsevier.com/knowledge-based-systems">(KBS)</a>, 2012
-                        <br />
-                        <a href="http://recmind.cn/papers/ibcontent_kbs12.pdf"> <i class="fa fa-file-text"></i> paper
-                        </a>
-                    </li>-->
-                    <!-- CIKM 11 -->
-                    <li><a href="http://recmind.cn/papers/yana_cikm11.pdf">
-                    YANA: An Efficient Privacy-preserving Recommender System for Online Social Communities</a>
-                        <br> Dongsheng Li, Qin Lv, Li Shang, Ning Gu
-                        <br> International Conference on Information and Knowledge Management <a href="http://www.cikm2011.org/">(CIKM)</a>, 2011
-                        <br />
-                        <!--a href="http://recmind.cn/papers/yana_cikm11.pdf"> <i class="fa fa-file-text"></i> paper
-                        </a-->
-                    </li>
-                    <li><a href="http://recmind.cn/papers/pistis_waiat11.pdf">
-                    Pistis: A Privacy-preserving Content Recommender System for Online Social Communities</a>
-                        <br> Dongsheng Li, Qin Lv, Huanhuan Xia, Li Shang, Tun Lu, Ning Gu
-                        <br> International Conferences on Web Intelligence and Intelligent Agent Technology <a href="http://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=6036126">(WI-IAT)</a>, 2011
-                        <br />
-                        <!--a href="http://recmind.cn/papers/pistis_waiat11.pdf"> <i class="fa fa-file-text"></i> paper
-                        </a-->
-                    </li>
-                    <!-- IMS 10 
-                    <li><a href="http://recmind.cn/papers/twcm_ims10.pdf">
-                    Towards Efficient Content Management in Online Social Communities — A Study of User Interest and Context</a>
-                        <br> Xing Xie, Dongsheng Li, Huanghuan Xia
-                        <br> International Conference on Advanced Information Management and Service <a href="http://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=5707966">(IMS)</a>, 2010
-                        <br />
-                        <a href="http://recmind.cn/papers/twcm_ims10.pdf"> <i class="fa fa-file-text"></i> paper
-                        </a>
-                    </li>
-					-->
+                    </li>					
                 </ul>
+				</div>
+
+				<div id="hl" class="tabcontent" style="display:none">
+				  <ul style="padding-left:10px;">
+					
+					<!-- INTERSPEECH 2023 -->
+					<li><a href="https://arxiv.org/pdf/2306.02682.pdf">
+					End-to-End Word-Level Pronunciation Assessment with MASK Pre-training
+					</a>
+                        <br>Yukang Liang, Kaitao Song, Shaoguang Mao, Huiqiang Jiang, Luna Qiu, Yuqing Yang, Dongsheng Li, Linli Xu, Lili Qiu.
+                        <br>The 24th INTERSPEECH Conference <a>(INTERSPEECH)</a>. 2023
+                        <br />
+                    </li>
+					<!-- SMC 2023 -->
+					<li><a href="http://recmind.cn/papers/placeholder.pdf">
+					Protecting the Future: Neonatal Seizure Detection with Spatial-Temporal Modeling
+					</a>
+                        <br>Ziyue Li, Yuchen Fang, You Li, Kan Ren, Yansen Wang, Xufang Luo, Juanyong Duan, Congrui Huang, Dongsheng Li, Lili Qiu.
+                        <br>IEEE International Conference on Systems, Man, and Cybernetics <a>(SMC)</a>. 2023
+                        <br />
+                    </li>
+					<!-- ICASSP 2023 -->
+					<li><a href="https://arxiv.org/pdf/2302.13748.pdf">
+					Unsupervised Video Anomaly Detection for Stereotypical Behaviours in Autism
+					</a>
+                        <br>Jiaqi Gao, Xinyang Jiang, Yuqing Yang, Dongsheng Li, Lili Qiu.
+                        <br>IEEE International Conference on Acoustics, Speech and Signal Processing <a>(ICASSP)</a>. 2023
+                        <br />
+                    </li>
+					<!-- ICASSP 2023 -->
+					<li><a href="https://arxiv.org/pdf/2303.08019.pdf">
+					Leveraging Pretrained Representations with Task-related Keywords for Alzheimer's Disease Detection
+					</a>
+                        <br>Jinchao Li, Kaitao Song, Junan Li, Bo Zheng, Dongsheng Li, Xixin Wu, Xunying Liu, Helen Meng.
+                        <br>IEEE International Conference on Acoustics, Speech and Signal Processing <a>(ICASSP)</a>. 2023
+                        <br />
+                    </li>
+					<!-- ICASSP 2023 -->
+					<li><a href="https://arxiv.org/pdf/2303.08027.pdf">
+					A Hierarchical Regression Chain Framework for Affective Vocal Burst Recognition
+					</a>
+                        <br>Jinchao Li, Xixin Wu, Kaitao Song, Dongsheng Li, Xunying Liu, Helen Meng.
+                        <br>IEEE International Conference on Acoustics, Speech and Signal Processing <a>(ICASSP)</a>. 2023
+                        <br />
+                    </li>
+					<!-- InterSpeech 2022 -->
+					<li><a href="https://arxiv.org/pdf/2208.05122.pdf">
+					Improving Hypernasality Estimation with Automatic Speech Recognition in Cleft Palate Speech</a>
+                        <br>Kaitao Song, Teng Wan, Bixia Wang, Huiqiang Jiang, Luna Qiu, Jiahang Xu, Liping Jiang, Qun Lou, Yuqing Yang, Dongsheng Li, Xudong Wang, Lili Qiu.
+                        <br>The 23rd Interspeech Conference <a>(INTERSPEECH)</a>. 2022
+                        <br />
+                    </li>
+					<!-- Nature Cardio Res-->
+					<li><a href="https://www.researchgate.net/publication/360493842_Metabolic_characterization_of_hypertrophic_cardiomyopathy_in_human_heart#fullTextFileContent">
+					Metabolic characterization of hypertrophic cardiomyopathy in human heart</a>
+                        <br>Wenmin Wang, Jizheng Wang, Ke Yao, Shuiyun Wang, Meng Nie, Yizi Zhao, Bohong Wang, Huanhuan Pang, Jingjing Xu, Guixin Wu, Minjie Lu, Nan Tang, Chunmei Qi, Hengzhi Pei, Xufang Luo, Dongsheng Li, Tianshu Yang, Qing Sun, Xiang Wei, Yan Li, Dingsheng Jiang, Peng Li, Lei Song, Zeping Hu.
+                        <br>Nature Cardiovascular Research. 2022
+                        <br />
+                    </li>
+					<!-- PNAS 2021 -->
+					<li><a href="http://recmind.cn/papers/PNAS21.pdf">Predicting the effect of confinement on the COVID-19 spread using machine learning enriched with satellite air pollution observations.</a>
+                        <br>Xing, X., Xiong, Y., Yang, R., Wang, R., Wang, W., Kan, H., Lu, T., Li, D., Cao, J., Peñuelas, J., Ciais, P., Bauer, N., Boucher, O., Balkanski, Y., Hauglustaine, D., Brasseur, G., Morawska, L., Janssens. I.A., Wang, X., Sardans, J., Wang, Y., Deng, Y., Wang, L., Chen, J., Tang, X., Zhang, R.
+                        <br>Proceedings of the National Academy of Sciences <a>(PNAS)</a>. 2021
+                        <br />
+                    </li>
+					
+                </ul>
+				</div>
+
+                
             </div>
 			<!-- Patents -->
             <a name="pat"></a>
@@ -851,6 +747,22 @@
     ga('create', 'UA-89196914-1', 'auto');
     ga('send', 'pageview');
     </script>
+	
+	<script>
+	function openCity(evt, cityName) {
+	  var i, tabcontent, tablinks;
+	  tabcontent = document.getElementsByClassName("tabcontent");
+	  for (i = 0; i < tabcontent.length; i++) {
+		tabcontent[i].style.display = "none";
+	  }
+	  tablinks = document.getElementsByClassName("tablinks");
+	  for (i = 0; i < tablinks.length; i++) {
+		tablinks[i].className = tablinks[i].className.replace(" active", "");
+	  }
+	  document.getElementById(cityName).style.display = "block";
+	  evt.currentTarget.className += " active";
+	}
+	</script>
 </body>
 
 </html>
