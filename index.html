@@ -1383,6 +1383,49 @@
 	  evt.currentTarget.className += " active";
 	}
 	</script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        const MAX_VISIBLE = 10;
+        document.querySelectorAll('#publication .tabcontent ul').forEach(function(ul) {
+            const items = Array.from(ul.querySelectorAll('li'));
+            if (items.length <= MAX_VISIBLE) return;
+
+            // hide extra items
+            const hiddenItems = items.slice(MAX_VISIBLE);
+            hiddenItems.forEach(li => li.style.display = 'none');
+
+            // create toggle link
+            const toggle = document.createElement('a');
+            toggle.href = '#';
+            toggle.className = 'pub-toggle';
+            toggle.dataset.expanded = 'false';
+            toggle.style.display = 'inline-block';
+            toggle.style.marginTop = '8px';
+            toggle.style.cursor = 'pointer';
+            toggle.textContent = `Show more (${hiddenItems.length})`;
+
+            toggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            const expanded = toggle.dataset.expanded === 'true';
+            if (!expanded) {
+                hiddenItems.forEach(li => li.style.display = 'list-item');
+                toggle.textContent = 'Show less';
+                toggle.dataset.expanded = 'true';
+            } else {
+                hiddenItems.forEach(li => li.style.display = 'none');
+                toggle.textContent = `Show more (${hiddenItems.length})`;
+                toggle.dataset.expanded = 'false';
+                // scroll the tab content into view so user doesn't lose context
+                ul.scrollIntoView({behavior: 'smooth', block: 'start'});
+            }
+            });
+
+            // insert toggle after the list
+            ul.parentNode.insertBefore(toggle, ul.nextSibling);
+        });
+        });
+    </script>
 </body>
 
 </html>
