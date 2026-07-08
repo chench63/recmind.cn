@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html dir="LTR" lang="en">
 <!-- 
 	Attention: This concise design is copied from <a href="http://www.cs.cmu.edu/~muli/">Mu Li</a>
 -->
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
     <title>DongSheng Li's Homepage</title>
     <meta name="description" content="Dongsheng Li's personal website. Principal Research Manager at Microsoft Research Asia focusing on machine learning, healthcare AI, and recommender systems.">
     <meta name="keywords" content="Dongsheng Li, machine learning, healthcare AI, recommender systems, Microsoft Research Asia, publications">
@@ -49,28 +49,43 @@
                     color: #111;
                 }
 
+                #about,
+                #publication,
+                #awards {
+                    border-top: 1px solid #e6e6e6;
+                    margin-top: 18px;
+                    padding-top: 12px;
+                }
+
+                .contact-links a {
+                    margin-right: 12px;
+                    white-space: nowrap;
+                }
+
                 .pub-controls {
                     display: flex;
                     flex-wrap: wrap;
                     align-items: center;
-                    gap: 8px;
-                    margin: 10px 0 10px;
+                    gap: 5px;
+                    margin: 8px 0 8px;
+                    color: #555;
                 }
 
                 .pub-controls label {
-                    font-size: 13px;
+                    font-size: 12px;
                     font-weight: 600;
                     margin-bottom: 0;
                 }
 
                 .pub-controls select,
+                .pub-controls input,
                 .pub-controls button {
-                    height: 32px;
-                    border: 1px solid #cfcfcf;
-                    border-radius: 6px;
-                    padding: 0 10px;
+                    height: 26px;
+                    border: 1px solid #d9d9d9;
+                    border-radius: 4px;
+                    padding: 0 7px;
                     background: #fff;
-                    font-size: 13px;
+                    font-size: 12px;
                 }
 
                 .pub-controls button {
@@ -81,14 +96,42 @@
                     background: #f3f4f6;
                 }
 
+                .pub-filter-reset.is-hidden {
+                    display: none;
+                }
+
+                .pub-search {
+                    min-width: 220px;
+                    flex: 1 1 220px;
+                }
+
                 .pub-result {
-                    font-size: 13px;
+                    font-size: 12px;
                     color: #555;
-                    margin-left: auto;
+                    flex-basis: 100%;
+                    margin-top: 2px;
+                }
+
+                .pub-year-heading {
+                    list-style: none;
+                    margin: 12px 0 4px;
+                    padding-top: 4px;
+                    border-top: 1px solid #eeeeee;
+                    color: #444;
+                    font-weight: 700;
+                }
+
+                .site-footer {
+                    border-top: 1px solid #e6e6e6;
+                    margin-top: 24px;
+                    padding: 12px 0 4px;
+                    color: #666;
+                    font-size: 12px;
                 }
 
                 .tab button:focus,
                 .pub-controls select:focus,
+                .pub-controls input:focus,
                 .pub-controls button:focus,
                 a:focus {
                     outline: 2px solid #2f6feb;
@@ -98,7 +141,6 @@
                 @media (max-width: 768px) {
                     .pub-result {
                         width: 100%;
-                        margin-left: 0;
                     }
                 }
 
@@ -149,11 +191,11 @@
         <div class="container">
             <nav id="main-nav" aria-label="Primary">
                 <a class="main-nav-link" href="http://recmind.cn/index.html">Home</a>
-				<a class="main-nav-link" href="http://recmind.cn/#about">About</a>
+                <a class="main-nav-link" href="http://recmind.cn/#about">About</a>
 				<!--a class="main-nav-link" href="http://recmind.cn/#research">Research Interests</a-->
-				<a class="main-nav-link" href="http://recmind.cn/#pub">Publication</a>
+                <a class="main-nav-link" href="http://recmind.cn/#publication">Publication</a>
                 <!--a class="main-nav-link" href="http://recmind.cn/#work">Working</a-->
-				<a class="main-nav-link" href="http://recmind.cn/#honor">Award</a>
+                <a class="main-nav-link" href="http://recmind.cn/#awards">Award</a>
             </nav>
         </div>
     </div>
@@ -168,15 +210,13 @@
 					<a>Dongsheng Li (李东胜)</a>
 				</h2> 
 				Principal Research Manager <br> Microsoft Research Asia, Shanghai <br>
-                <p>
+                <p class="contact-links">
                     <!--Advisors: <a href="http://www.cs.fudan.edu.cn/en/?page_id=2089">Ning Gu</a> and <a href="http://ecee.colorado.edu/~shangl/">Li Shang</a>
                     <br>-->
-                    <i class="fa fa-inbox"></i> <a>dongshengli@fudan.edu.cn</a>
-                    <br>
+                    <i class="fa fa-inbox"></i> <a href="mailto:dongshengli@fudan.edu.cn">Email</a>
                     <!--<i class="fab fa-github"></i> <a href="https://github.com/ldscc/">Github</a>
 					<br>-->
 					<i class="fab fa-researchgate"></i> <a href="https://www.researchgate.net/profile/Dongsheng_Li7">ResearchGate</a>
-					<br>
 					<i class="fab fa-google"></i> <a href="https://scholar.google.com/citations?user=VNg5rA8AAAAJ&hl=zh-CN">GoogleScholar</a>
                 </p>
             </div>
@@ -206,7 +246,7 @@
 			</div>
 			<div id="hire">
                 <p> 
-				We are <em style="color:red">hiring researchers and interns</em>. Please email me <i class="fa fa-inbox"></i> <a>dongsli@microsoft.com</a> if you are interested to join MSRA Shanghai.
+                We are <em style="color:red">hiring researchers and interns</em>. Please email me <i class="fa fa-inbox"></i> <a href="mailto:dongsli@microsoft.com">dongsli@microsoft.com</a> if you are interested to join MSRA Shanghai.
 				</p>
 			</div>
 			<div id="book">
@@ -228,6 +268,8 @@
             <div id="publication">
 			<h3>Publication (by category)</h3>
                 <div class="pub-controls" aria-label="Publication filters">
+                    <label for="pub-search">Search</label>
+                    <input id="pub-search" class="pub-search" type="search" placeholder="Title, author, venue, or year" aria-label="Search publications">
                     <label for="pub-year-filter">Year</label>
                     <select id="pub-year-filter" aria-label="Filter publications by year">
                         <option value="all">All years</option>
@@ -236,17 +278,22 @@
                     <select id="pub-venue-filter" aria-label="Filter publications by venue">
                         <option value="all">All venues</option>
                     </select>
-                    <button id="pub-filter-reset" type="button">Reset</button>
+                    <button id="pub-filter-reset" class="pub-filter-reset is-hidden" type="button">Reset</button>
                     <div id="pub-filter-result" class="pub-result" aria-live="polite"></div>
                 </div>
 				<!-- Tab links -->
 				<div class="tab">				  
+				  <button class="tablinks" onclick="openCity(event, 'allpubs')">All</button>
 				  <button class="tablinks" onclick="openCity(event, 'ml')">Machine Learning</button>
 				  <button class="tablinks" onclick="openCity(event, 'hl')">AI for Health</button>
 				  <button class="tablinks" onclick="openCity(event, 'rs')">Recommender System</button>
 				</div>
 
-				<div id="ml" class="tabcontent" style="display:block">
+                                <div id="allpubs" class="tabcontent" style="display:block">
+                                    <ul style="padding-left:10px"></ul>
+                                </div>
+
+                <div id="ml" class="tabcontent">
 				  <ul style="padding-left:10px">
                     <!-- ICML 2026 -->
 					<li><a href="https://openreview.net/pdf?id=tLW4Tc7Zn9">
@@ -990,13 +1037,13 @@
                         <br>Thirty-Sixth AAAI Conference on Artificial Intelligence <a>(AAAI)</a>. 2022
                         <br />
                     </li>
-					<!-- NIPS 2021 -->
+                    <!-- NeurIPS 2021 -->
 					<li><a href="http://recmind.cn/papers/yolat_nips21.pdf">Recognizing Vector Graphics without Rasterization</a>
                         <br>Xinyang Jiang, Lu Liu, Caihua Shan, Yifei Shen, Xuanyi Dong, Dongsheng Li.
                         <br>The 2021 Conference on Neural Information Processing Systems <a>(NeurIPS)</a>. 2021
                         <br />
                     </li>
-					<!-- NIPS 2021 -->
+                    <!-- NeurIPS 2021 -->
 					<li><a href="http://recmind.cn/papers/explainer_nips21.pdf">Reinforcement Learning Enhanced Explainer for Graph Neural Networks</a>
                         <br>Caihua Shan, Yifei Shen, Yao Zhang, Xiang Li, Dongsheng Li.
                         <br>The 2021 Conference on Neural Information Processing Systems <a>(NeurIPS)</a>. 2021
@@ -1446,7 +1493,7 @@
 					<!-- AAAI 2021 -->
 					<li><a href="http://recmind.cn/papers/SGMC_AAAI21.pdf">Scalable and Explainable 1-Bit Matrix Completion via Graph Signal Learning</a>
                         <br> Chao Chen, Dongsheng Li, Junchi Yan, Hanchi Huang, Xiaokang Yang.
-                        <br>The Thirty-Fifth AAAI Conference on Artificial Intelligence <a>(AAAI-21)</a>, 2021
+                        <br>The Thirty-Fifth AAAI Conference on Artificial Intelligence <a>(AAAI)</a>, 2021
                         <br />
                     </li>
 					<!-- TKDE 2019 -->
@@ -1467,10 +1514,10 @@
                         <br> The Web Conference <a>(WWW)</a>, 2018
                         <br />
                     </li>
-					<!-- NIPS 2017 -->
+					<!-- NeurIPS 2017 -->
 					<li><a href="http://recmind.cn/papers/mrma_nips17.pdf">Mixture-Rank Matrix Approximation for Collaborative Filtering</a>
                         <br> Dongsheng Li, Chao Chen, Wei Liu, Tun Lu, Ning Gu, Stephen M. Chu.
-                        <br> Advances in Neural Information Processing Systems <a>(NIPS)</a>, 2017 
+                        <br> Advances in Neural Information Processing Systems <a>(NeurIPS)</a>, 2017 
                         <br />
                     </li>
                     <!-- AAAI 17 -->
@@ -1556,18 +1603,19 @@
 			<!-- Honors and Awards -->
             <a name="awd"></a>
             <div id="awards">
-                <h3>Honour and Awards</h3>
+                <h3>Honors and Awards</h3>
 				<ul style="padding-left:10px;">
-                    <li>Intel Fellowship, Intel, 2011</li>
-                    <li>Excellent Graduate Student, Fudan University, 2012</li>
                     <li>Outstanding Technical Achievement Award, IBM Research, 2016</li>
                     <li>Outstanding Technical Achievement Award, IBM Research, 2017</li>
                     <li>Outstanding Technical Achievement Award, IBM Research, 2018</li>
-                    <li>IBM Corperate Award, IBM, 2018</li>
+                    <li>IBM Corporate Award, IBM, 2018</li>
 					<li>Outstanding Paper Award, EACL, 2024</li>
 					<li>2023 China Intelligent Computing Technology Innovators Award, MIT Technology Review China & DeepTech, 2024</li>
                 </ul>
             </div>
+			<footer class="site-footer">
+				Last updated: July 2026. Contact: <a href="mailto:dongsli@microsoft.com">dongsli@microsoft.com</a>
+			</footer>
         </div>
     </div>
         </main>
@@ -1610,6 +1658,12 @@
     </script>
 	
 	<script>
+    function trackPublicationAction(action, label) {
+      if (typeof window.ga === "function") {
+        window.ga("send", "event", "Publication", action, label || "");
+      }
+    }
+
 	function openCity(evt, cityName) {
 	  var i, tabcontent, tablinks;
 	  tabcontent = document.getElementsByClassName("tabcontent");
@@ -1622,6 +1676,7 @@
 	  }
 	  document.getElementById(cityName).style.display = "block";
 	  evt.currentTarget.className += " active";
+      trackPublicationAction("tab", evt.currentTarget.dataset.baseLabel || evt.currentTarget.textContent.trim());
 	  if (typeof window.updatePublicationView === "function") {
 		window.updatePublicationView();
 	  }
@@ -1631,6 +1686,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
         const MAX_VISIBLE = 10;
+        const searchInput = document.getElementById('pub-search');
         const yearFilter = document.getElementById('pub-year-filter');
         const venueFilter = document.getElementById('pub-venue-filter');
         const resetButton = document.getElementById('pub-filter-reset');
@@ -1645,18 +1701,31 @@
         }
 
         function getVenue(text) {
-            function normalizeVenue(rawVenue) {
+            function normalizeVenue(rawVenue, sourceText) {
                 if (!rawVenue) {
                     return 'Other';
                 }
 
                 const trimmed = rawVenue.trim();
                 const noYearSuffix = trimmed.replace(/-(?:19|20)?\d{2}$/, '');
+                const source = sourceText || '';
 
+                if (/neural information processing systems/i.test(source)) {
+                    return 'NeurIPS';
+                }
                 if (/^aaai$/i.test(noYearSuffix)) {
                     return 'AAAI';
                 }
                 if (/^(neurips|nips)$/i.test(noYearSuffix) || /neural information processing systems/i.test(trimmed)) {
+                    return 'NeurIPS';
+                }
+                if (/^acl$/i.test(noYearSuffix) && /findings/i.test(source)) {
+                    return 'ACL Findings';
+                }
+                if (/association for computational linguistics/i.test(trimmed) && /findings/i.test(trimmed)) {
+                    return 'ACL Findings';
+                }
+                if (/^nips$/i.test(noYearSuffix)) {
                     return 'NeurIPS';
                 }
 
@@ -1666,7 +1735,7 @@
             const matchedAcronyms = text.match(/\(([A-Z][A-Z0-9-]{1,15})\)/g);
             if (matchedAcronyms && matchedAcronyms.length) {
                 const rawVenue = matchedAcronyms[matchedAcronyms.length - 1].replace(/[()]/g, '');
-                return normalizeVenue(rawVenue);
+                return normalizeVenue(rawVenue, text);
             }
 
             const lines = text
@@ -1685,7 +1754,7 @@
 
                 const venueInParentheses = cleaned.match(/\(([A-Za-z][A-Za-z0-9-]{1,19})\)\s*$/);
                 if (venueInParentheses && venueInParentheses[1]) {
-                    return normalizeVenue(venueInParentheses[1]);
+                    return normalizeVenue(venueInParentheses[1], text);
                 }
 
                 if (!cleaned) {
@@ -1695,16 +1764,44 @@
                 }
 
                 if (cleaned && cleaned.length) {
-                    return normalizeVenue(cleaned);
+                    return normalizeVenue(cleaned, text);
                 }
             }
 
             return 'Other';
         }
 
+        function activeCategoryName() {
+            const activeButton = publication.querySelector('.tablinks.active');
+            return activeButton ? activeButton.textContent.trim() : 'this category';
+        }
+
         function activeTabPanel() {
             const panel = publication.querySelector('.tabcontent[style*="display: block"]');
             return panel || publication.querySelector('.tabcontent');
+        }
+
+        function updateResetVisibility() {
+            const hasFilters = searchInput.value.trim() || yearFilter.value !== 'all' || venueFilter.value !== 'all';
+            resetButton.classList.toggle('is-hidden', !hasFilters);
+        }
+
+        function updateTabCounts() {
+            Array.from(publication.querySelectorAll('.tablinks')).forEach(function(button) {
+                const match = button.getAttribute('onclick').match(/'([^']+)'/);
+                const panel = match ? document.getElementById(match[1]) : null;
+                const count = panel ? panel.querySelectorAll('ul > li:not(.pub-year-heading)').length : 0;
+                button.dataset.baseLabel = button.dataset.baseLabel || button.textContent.trim();
+                button.textContent = button.dataset.baseLabel + ' (' + count + ')';
+            });
+        }
+
+        const sourceItems = Array.from(publication.querySelectorAll('.tabcontent:not(#allpubs) ul li'));
+        const allList = publication.querySelector('#allpubs ul');
+        if (allList) {
+            sourceItems.forEach(function(li) {
+                allList.appendChild(li.cloneNode(true));
+            });
         }
 
         const lists = Array.from(publication.querySelectorAll('.tabcontent ul'));
@@ -1718,6 +1815,7 @@
                 const text = li.innerText || li.textContent;
                 const year = getYear(text);
                 const venue = getVenue(text);
+                li.dataset.pubText = text.toLowerCase().replace(/\s+/g, ' ');
                 li.dataset.pubYear = year;
                 li.dataset.pubVenue = venue;
                 years.add(year);
@@ -1775,27 +1873,59 @@
             }
             const count = ul._matchedCount;
             const total = ul._allItems.length;
-            result.textContent = 'Showing ' + count + ' of ' + total + ' in this category';
+            const selectedYear = yearFilter.value;
+            const selectedVenue = venueFilter.value;
+            const searchText = searchInput.value.trim();
+            const yearText = selectedYear === 'all' ? '' : ' from ' + selectedYear;
+            const venueText = selectedVenue === 'all' ? '' : ' ' + selectedVenue;
+            const searchLabel = searchText ? ' matching "' + searchText + '"' : '';
+            result.textContent = 'Showing ' + count + venueText + ' papers' + yearText + searchLabel + ' in ' + activeCategoryName() + ' (' + total + ' total)';
+        }
+
+        function updateYearHeaders(ul, visibleItems) {
+            Array.from(ul.querySelectorAll('.pub-year-heading')).forEach(function(header) {
+                header.parentNode.removeChild(header);
+            });
+
+            let currentYear = '';
+            visibleItems.forEach(function(li) {
+                const year = li.dataset.pubYear;
+                if (year && year !== 'Unknown' && year !== currentYear) {
+                    const header = document.createElement('li');
+                    header.className = 'pub-year-heading';
+                    header.textContent = year;
+                    ul.insertBefore(header, li);
+                    currentYear = year;
+                }
+            });
         }
 
         function applyFilters() {
+            const query = searchInput.value.trim().toLowerCase();
             const selectedYear = yearFilter.value;
             const selectedVenue = venueFilter.value;
 
             lists.forEach(function(ul) {
+                Array.from(ul.querySelectorAll('.pub-year-heading')).forEach(function(header) {
+                    header.parentNode.removeChild(header);
+                });
+
                 const matched = ul._allItems.filter(function(li) {
+                    const textMatch = !query || li.dataset.pubText.indexOf(query) !== -1;
                     const yearMatch = selectedYear === 'all' || li.dataset.pubYear === selectedYear;
                     const venueMatch = selectedVenue === 'all' || li.dataset.pubVenue === selectedVenue;
-                    return yearMatch && venueMatch;
+                    return textMatch && yearMatch && venueMatch;
                 });
 
                 ul._matchedCount = matched.length;
                 ul._allItems.forEach(function(li) { li.style.display = 'none'; });
 
                 const visibleCount = ul._expanded ? matched.length : Math.min(MAX_VISIBLE, matched.length);
-                matched.slice(0, visibleCount).forEach(function(li) {
+                const visibleItems = matched.slice(0, visibleCount);
+                visibleItems.forEach(function(li) {
                     li.style.display = 'list-item';
                 });
+                updateYearHeaders(ul, visibleItems);
 
                 const toggle = ul._toggle;
                 if (toggle) {
@@ -1808,6 +1938,7 @@
                 }
             });
 
+            updateResetVisibility();
             updateResultText();
         }
 
@@ -1817,20 +1948,30 @@
             });
         }
 
+        searchInput.addEventListener('input', function() {
+            resetExpanded();
+            trackPublicationAction('search', searchInput.value.trim());
+            applyFilters();
+        });
+
         yearFilter.addEventListener('change', function() {
             resetExpanded();
+            trackPublicationAction('year', yearFilter.value);
             applyFilters();
         });
 
         venueFilter.addEventListener('change', function() {
             resetExpanded();
+            trackPublicationAction('venue', venueFilter.value);
             applyFilters();
         });
 
         resetButton.addEventListener('click', function() {
+            searchInput.value = '';
             yearFilter.value = 'all';
             venueFilter.value = 'all';
             resetExpanded();
+            trackPublicationAction('reset', 'all');
             applyFilters();
         });
 
@@ -1839,7 +1980,19 @@
             firstTab.className += ' active';
         }
 
+        Array.from(document.querySelectorAll('a[href^="http"]')).forEach(function(link) {
+            try {
+                const url = new URL(link.href);
+                if (url.hostname && url.hostname !== 'recmind.cn') {
+                    link.target = '_blank';
+                    link.rel = 'noopener noreferrer';
+                }
+            } catch (e) {
+            }
+        });
+
         window.updatePublicationView = updateResultText;
+        updateTabCounts();
         applyFilters();
         });
     </script>
