@@ -1729,6 +1729,31 @@
                     return 'NeurIPS';
                 }
 
+                const journalAliases = [
+                    [/^nature communications$/i, 'Nature Communications'],
+                    [/^proceedings of the national academy of sciences$/i, 'PNAS'],
+                    [/^international journal of computer vision$/i, 'IJCV'],
+                    [/^future generation computer systems$/i, 'FGCS'],
+                    [/^ieee transactions on pattern analysis and machine intelligence$/i, 'TPAMI'],
+                    [/^ieee transactions on image processing$/i, 'TIP'],
+                    [/^ieee transactions on circuits and systems for video technology$/i, 'TCSVT'],
+                    [/^ieee transactions on information forensics and security$/i, 'TIFS'],
+                    [/^ieee transactions on multimedia$/i, 'TMM'],
+                    [/^ieee transactions on sustainable energy$/i, 'TSTE'],
+                    [/^acm transactions on information systems$/i, 'TOIS'],
+                    [/^ieee transactions on computational social systems$/i, 'TCCS'],
+                    [/^acm transactions on the web$/i, 'TWEB'],
+                    [/^ieee transactions on cybernetics$/i, 'TCYB'],
+                    [/^acm transactions on knowledge discovery from data$/i, 'TKDD'],
+                    [/^ieee transactions on knowledge and data engineering$/i, 'TKDE']
+                ];
+
+                for (const alias of journalAliases) {
+                    if (alias[0].test(noYearSuffix)) {
+                        return alias[1];
+                    }
+                }
+
                 return noYearSuffix;
             }
 
