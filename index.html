@@ -7,13 +7,100 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>DongSheng Li's Homepage</title>
+    <meta name="description" content="Dongsheng Li's personal website. Principal Research Manager at Microsoft Research Asia focusing on machine learning, healthcare AI, and recommender systems.">
+    <meta name="keywords" content="Dongsheng Li, machine learning, healthcare AI, recommender systems, Microsoft Research Asia, publications">
+    <meta name="author" content="Dongsheng Li">
+    <link rel="canonical" href="https://recmind.cn/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Dongsheng Li | Homepage">
+    <meta property="og:description" content="Principal Research Manager at Microsoft Research Asia. Research in machine learning, healthcare AI, and recommender systems.">
+    <meta property="og:url" content="https://recmind.cn/">
+    <meta property="og:image" content="https://recmind.cn/photoes/Head_Dongsheng%20Li_2024.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Dongsheng Li | Homepage">
+    <meta name="twitter:description" content="Principal Research Manager at Microsoft Research Asia.">
+    <meta name="twitter:image" content="https://recmind.cn/photoes/Head_Dongsheng%20Li_2024.jpg">
     <link rel="stylesheet" media="all" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-		<style>
-		body {font-family: Arial;}
+    <style>
+        body { font-family: Arial; }
+
+                .skip-link {
+                    position: absolute;
+                    left: -9999px;
+                    top: auto;
+                    width: 1px;
+                    height: 1px;
+                    overflow: hidden;
+                }
+
+                .skip-link:focus {
+                    left: 12px;
+                    top: 12px;
+                    width: auto;
+                    height: auto;
+                    z-index: 9999;
+                    background: #ffffff;
+                    border: 2px solid #111;
+                    padding: 8px 12px;
+                    color: #111;
+                }
+
+                .pub-controls {
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    gap: 8px;
+                    margin: 10px 0 10px;
+                }
+
+                .pub-controls label {
+                    font-size: 13px;
+                    font-weight: 600;
+                    margin-bottom: 0;
+                }
+
+                .pub-controls select,
+                .pub-controls button {
+                    height: 32px;
+                    border: 1px solid #cfcfcf;
+                    border-radius: 6px;
+                    padding: 0 10px;
+                    background: #fff;
+                    font-size: 13px;
+                }
+
+                .pub-controls button {
+                    cursor: pointer;
+                }
+
+                .pub-controls button:hover {
+                    background: #f3f4f6;
+                }
+
+                .pub-result {
+                    font-size: 13px;
+                    color: #555;
+                    margin-left: auto;
+                }
+
+                .tab button:focus,
+                .pub-controls select:focus,
+                .pub-controls button:focus,
+                a:focus {
+                    outline: 2px solid #2f6feb;
+                    outline-offset: 2px;
+                }
+
+                @media (max-width: 768px) {
+                    .pub-result {
+                        width: 100%;
+                        margin-left: 0;
+                    }
+                }
 
 		/* Style the tab */
 		.tab {
@@ -52,28 +139,29 @@
 		  border: 1px solid #ccc;
 		  border-top: none;
 		}
-		</style>
+    </style>
 </head>
 
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <!-- navigation -->
     <div class="navbar navbar-fixed-top">
         <div class="container">
-            <nav id="main-nav">
+            <nav id="main-nav" aria-label="Primary">
                 <a class="main-nav-link" href="http://recmind.cn/index.html">Home</a>
 				<a class="main-nav-link" href="http://recmind.cn/#about">About</a>
 				<!--a class="main-nav-link" href="http://recmind.cn/#research">Research Interests</a-->
 				<a class="main-nav-link" href="http://recmind.cn/#pub">Publication</a>
-				<a class="main-nav-link" href="http://recmind.cn/#pat">Patent</a>
                 <!--a class="main-nav-link" href="http://recmind.cn/#work">Working</a-->
 				<a class="main-nav-link" href="http://recmind.cn/#honor">Award</a>
             </nav>
         </div>
     </div>
     <!-- content -->
+    <main id="main-content">
     <div id="wrapper">
         <div id="content">
-            <a><img id="head_photo" src="./photoes/Head_Dongsheng Li_2024.jpg"/></a>
+            <a><img id="head_photo" src="./photoes/Head_Dongsheng Li_2024.jpg" alt="Portrait of Dongsheng Li" /></a>
             <div id="person_intro">
                 <h2 id="name">
 					<!--a href="http://recmind.cn/" title="DongSheng Li&#39;s homepage"-->
@@ -139,14 +227,24 @@
             <a name="pub"></a>
             <div id="publication">
 			<h3>Publication (by category)</h3>
+                <div class="pub-controls" aria-label="Publication filters">
+                    <label for="pub-year-filter">Year</label>
+                    <select id="pub-year-filter" aria-label="Filter publications by year">
+                        <option value="all">All years</option>
+                    </select>
+                    <label for="pub-venue-filter">Venue</label>
+                    <select id="pub-venue-filter" aria-label="Filter publications by venue">
+                        <option value="all">All venues</option>
+                    </select>
+                    <button id="pub-filter-reset" type="button">Reset</button>
+                    <div id="pub-filter-result" class="pub-result" aria-live="polite"></div>
+                </div>
 				<!-- Tab links -->
 				<div class="tab">				  
 				  <button class="tablinks" onclick="openCity(event, 'ml')">Machine Learning</button>
 				  <button class="tablinks" onclick="openCity(event, 'hl')">AI for Health</button>
 				  <button class="tablinks" onclick="openCity(event, 'rs')">Recommender System</button>
 				</div>
-				
-				
 
 				<div id="ml" class="tabcontent" style="display:block">
 				  <ul style="padding-left:10px">
@@ -1444,25 +1542,6 @@
 
                 
             </div>
-			<!-- Patents -->
-            <a name="pat"></a>
-            <div id="patents">
-                <h3>Patents</h3>
-				<ul style="padding-left:10px;">
-                    <li>Wind power predictability enhancement using hybrid energy storage system. Application no.: 201310501062.6. (in Chinese)</li>
-                    <li>Wind power predictability enhancement by combining pitch control and ultracapacitor. Application no.: 201310500736.0. (in Chinese)</li>
-                    <li>Work-piece defect inspection via optical images and ct images. US20170161884A1.</li>
-                    <li>Job role identification. US20190279232A1.</li>
-                    <li>Training a machine learning model in a distributed privacy-preserving environment. US20180336486A1.</li>
-                    <li>Neural Network Training. US20180129917A1.</li>
-                    <li>Privacy-Preserving Smart Metering. US20180060976A1.</li>
-                    <li>Image orientation detection. US10121250B2.</li>
-                    <li>Expense compliance checking based on trajectory detection. US20180137576A1.</li>
-                    <li>Model based data processing. US20180068224A1.</li>
-                    <li>Providing Computation Services with Privacy. US10333715B2.</li>
-					<li>Multi-dimensional root cause analysis based on cross-metrics. WO2023136871A1</li>
-                </ul>
-            </div>
             <!-- Working Experience -->
             <a name="work"></a>
             <div id="teaching" style="display: none;">
@@ -1491,6 +1570,27 @@
             </div>
         </div>
     </div>
+        </main>
+
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Dongsheng Li",
+            "jobTitle": "Principal Research Manager",
+            "affiliation": {
+                "@type": "Organization",
+                "name": "Microsoft Research Asia"
+            },
+            "url": "https://recmind.cn/",
+            "email": "dongsli@microsoft.com",
+            "sameAs": [
+                "https://scholar.google.com/citations?user=VNg5rA8AAAAJ&hl=zh-CN",
+                "https://www.researchgate.net/profile/Dongsheng_Li7"
+            ]
+        }
+        </script>
+
     <!-- Google Analytics -->
     <script>
     (function(i, s, o, g, r, a, m) {
@@ -1522,49 +1622,225 @@
 	  }
 	  document.getElementById(cityName).style.display = "block";
 	  evt.currentTarget.className += " active";
+	  if (typeof window.updatePublicationView === "function") {
+		window.updatePublicationView();
+	  }
 	}
 	</script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
         const MAX_VISIBLE = 10;
-        document.querySelectorAll('#publication .tabcontent ul').forEach(function(ul) {
+        const yearFilter = document.getElementById('pub-year-filter');
+        const venueFilter = document.getElementById('pub-venue-filter');
+        const resetButton = document.getElementById('pub-filter-reset');
+        const result = document.getElementById('pub-filter-result');
+        const publication = document.getElementById('publication');
+        const years = new Set();
+        const venues = new Set();
+
+        function getYear(text) {
+            const matches = text.match(/\b(19|20)\d{2}\b/g);
+            return matches && matches.length ? matches[matches.length - 1] : 'Unknown';
+        }
+
+        function getVenue(text) {
+            function normalizeVenue(rawVenue) {
+                if (!rawVenue) {
+                    return 'Other';
+                }
+
+                const trimmed = rawVenue.trim();
+                const noYearSuffix = trimmed.replace(/-(?:19|20)?\d{2}$/, '');
+
+                if (/^aaai$/i.test(noYearSuffix)) {
+                    return 'AAAI';
+                }
+                if (/^(neurips|nips)$/i.test(noYearSuffix) || /neural information processing systems/i.test(trimmed)) {
+                    return 'NeurIPS';
+                }
+
+                return noYearSuffix;
+            }
+
+            const matchedAcronyms = text.match(/\(([A-Z][A-Z0-9-]{1,15})\)/g);
+            if (matchedAcronyms && matchedAcronyms.length) {
+                const rawVenue = matchedAcronyms[matchedAcronyms.length - 1].replace(/[()]/g, '');
+                return normalizeVenue(rawVenue);
+            }
+
+            const lines = text
+                .split(/\r?\n/)
+                .map(function(line) { return line.trim().replace(/\s+/g, ' '); })
+                .filter(function(line) { return line.length > 0; });
+
+            const venueLine = lines.find(function(line) {
+                return /\b(19|20)\d{2}\b/.test(line);
+            });
+
+            if (venueLine) {
+                let cleaned = venueLine
+                    .replace(/\b(19|20)\d{2}\b.*$/, '')
+                    .replace(/[.,;:\-\s]+$/, '');
+
+                const venueInParentheses = cleaned.match(/\(([A-Za-z][A-Za-z0-9-]{1,19})\)\s*$/);
+                if (venueInParentheses && venueInParentheses[1]) {
+                    return normalizeVenue(venueInParentheses[1]);
+                }
+
+                if (!cleaned) {
+                    cleaned = venueLine
+                        .replace(/^\s*(19|20)\d{2}\s*/, '')
+                        .replace(/[.,;:\-\s]+$/, '');
+                }
+
+                if (cleaned && cleaned.length) {
+                    return normalizeVenue(cleaned);
+                }
+            }
+
+            return 'Other';
+        }
+
+        function activeTabPanel() {
+            const panel = publication.querySelector('.tabcontent[style*="display: block"]');
+            return panel || publication.querySelector('.tabcontent');
+        }
+
+        const lists = Array.from(publication.querySelectorAll('.tabcontent ul'));
+        lists.forEach(function(ul) {
             const items = Array.from(ul.querySelectorAll('li'));
-            if (items.length <= MAX_VISIBLE) return;
+            ul._allItems = items;
+            ul._expanded = false;
+            ul._matchedCount = items.length;
 
-            // hide extra items
-            const hiddenItems = items.slice(MAX_VISIBLE);
-            hiddenItems.forEach(li => li.style.display = 'none');
+            items.forEach(function(li) {
+                const text = li.innerText || li.textContent;
+                const year = getYear(text);
+                const venue = getVenue(text);
+                li.dataset.pubYear = year;
+                li.dataset.pubVenue = venue;
+                years.add(year);
+                venues.add(venue);
+            });
 
-            // create toggle link
             const toggle = document.createElement('a');
             toggle.href = '#';
             toggle.className = 'pub-toggle';
-            toggle.dataset.expanded = 'false';
-            toggle.style.display = 'inline-block';
+            toggle.style.display = 'none';
             toggle.style.marginTop = '8px';
             toggle.style.cursor = 'pointer';
-            toggle.textContent = `Show more (${hiddenItems.length})`;
-
             toggle.addEventListener('click', function(e) {
-            e.preventDefault();
-            const expanded = toggle.dataset.expanded === 'true';
-            if (!expanded) {
-                hiddenItems.forEach(li => li.style.display = 'list-item');
-                toggle.textContent = 'Show less';
-                toggle.dataset.expanded = 'true';
-            } else {
-                hiddenItems.forEach(li => li.style.display = 'none');
-                toggle.textContent = `Show more (${hiddenItems.length})`;
-                toggle.dataset.expanded = 'false';
-                // scroll the tab content into view so user doesn't lose context
-                ul.scrollIntoView({behavior: 'smooth', block: 'start'});
-            }
+                e.preventDefault();
+                ul._expanded = !ul._expanded;
+                applyFilters();
+                if (!ul._expanded) {
+                    ul.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
             });
-
-            // insert toggle after the list
+            ul._toggle = toggle;
             ul.parentNode.insertBefore(toggle, ul.nextSibling);
         });
+
+        Array.from(years)
+            .filter(function(year) { return year !== 'Unknown'; })
+            .sort(function(a, b) { return Number(b) - Number(a); })
+            .forEach(function(year) {
+                const option = document.createElement('option');
+                option.value = year;
+                option.textContent = year;
+                yearFilter.appendChild(option);
+            });
+
+        Array.from(venues)
+            .filter(function(venue) { return venue !== 'Other'; })
+            .sort()
+            .forEach(function(venue) {
+                const option = document.createElement('option');
+                option.value = venue;
+                option.textContent = venue;
+                venueFilter.appendChild(option);
+            });
+
+        function updateResultText() {
+            const panel = activeTabPanel();
+            if (!panel) {
+                result.textContent = '';
+                return;
+            }
+            const ul = panel.querySelector('ul');
+            if (!ul || !ul._allItems) {
+                result.textContent = '';
+                return;
+            }
+            const count = ul._matchedCount;
+            const total = ul._allItems.length;
+            result.textContent = 'Showing ' + count + ' of ' + total + ' in this category';
+        }
+
+        function applyFilters() {
+            const selectedYear = yearFilter.value;
+            const selectedVenue = venueFilter.value;
+
+            lists.forEach(function(ul) {
+                const matched = ul._allItems.filter(function(li) {
+                    const yearMatch = selectedYear === 'all' || li.dataset.pubYear === selectedYear;
+                    const venueMatch = selectedVenue === 'all' || li.dataset.pubVenue === selectedVenue;
+                    return yearMatch && venueMatch;
+                });
+
+                ul._matchedCount = matched.length;
+                ul._allItems.forEach(function(li) { li.style.display = 'none'; });
+
+                const visibleCount = ul._expanded ? matched.length : Math.min(MAX_VISIBLE, matched.length);
+                matched.slice(0, visibleCount).forEach(function(li) {
+                    li.style.display = 'list-item';
+                });
+
+                const toggle = ul._toggle;
+                if (toggle) {
+                    if (matched.length > MAX_VISIBLE) {
+                        toggle.style.display = 'inline-block';
+                        toggle.textContent = ul._expanded ? 'Show less' : 'Show more (' + (matched.length - MAX_VISIBLE) + ')';
+                    } else {
+                        toggle.style.display = 'none';
+                    }
+                }
+            });
+
+            updateResultText();
+        }
+
+        function resetExpanded() {
+            lists.forEach(function(ul) {
+                ul._expanded = false;
+            });
+        }
+
+        yearFilter.addEventListener('change', function() {
+            resetExpanded();
+            applyFilters();
+        });
+
+        venueFilter.addEventListener('change', function() {
+            resetExpanded();
+            applyFilters();
+        });
+
+        resetButton.addEventListener('click', function() {
+            yearFilter.value = 'all';
+            venueFilter.value = 'all';
+            resetExpanded();
+            applyFilters();
+        });
+
+        const firstTab = publication.querySelector('.tablinks');
+        if (firstTab) {
+            firstTab.className += ' active';
+        }
+
+        window.updatePublicationView = updateResultText;
+        applyFilters();
         });
     </script>
 </body>
