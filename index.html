@@ -22,8 +22,10 @@
     <meta name="twitter:image" content="https://recmind.cn/photoes/Head_Dongsheng%20Li_2024.jpg">
     <link rel="stylesheet" media="all" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	<link rel="icon" type="image/png" sizes="32x32" href="./photoes/favicon-32.png">
+	<link rel="apple-touch-icon" href="./photoes/apple-touch-icon.png">
+	<meta name="theme-color" content="#0079b2">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         body { font-family: Arial; }
@@ -85,6 +87,29 @@
                     color: #333;
                 }
 
+                .books-heading {
+                    border-top: 1px solid #e6e6e6;
+                    margin-top: 18px;
+                    padding-top: 12px;
+                    margin-bottom: 6px;
+                }
+
+                #about,
+                #publication,
+                #awards,
+                .books-heading {
+                    scroll-margin-top: 70px;
+                }
+
+                #main-nav .main-nav-link.active {
+                    opacity: 1;
+                    color: #1094e8;
+                }
+
+                #publication .tabcontent li a:hover {
+                    text-decoration: underline;
+                }
+
                 .books-row {
                     display: flex;
                     flex-wrap: wrap;
@@ -96,7 +121,7 @@
                     flex: 1 1 0;
                     display: flex;
                     gap: 12px;
-                    align-items: flex-start;
+                    align-items: center;
                 }
 
                 .books-row .book p {
@@ -107,7 +132,15 @@
                     height: 90px;
                     width: auto;
                     border: 1px solid #ddd;
+                    border-radius: 2px;
+                    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+                    transition: transform 0.2s ease, box-shadow 0.2s ease;
                     flex-shrink: 0;
+                }
+
+                .book-cover:hover {
+                    transform: translateY(-3px);
+                    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.25);
                 }
 
                 @media (max-width: 768px) {
@@ -274,7 +307,7 @@
     <div id="wrapper">
         <div id="content">
             <div class="intro-header">
-            <a><img id="head_photo" src="./photoes/Head_Dongsheng Li_2024.jpg" alt="Portrait of Dongsheng Li" /></a>
+            <a><img id="head_photo" src="./photoes/Head_Dongsheng Li_2024.jpg" alt="Portrait of Dongsheng Li" width="152" height="170" decoding="async" /></a>
             <div id="person_intro">
                 <h2 id="name">
 					<!--a href="http://recmind.cn/" title="DongSheng Li&#39;s homepage"-->
@@ -284,7 +317,7 @@
                 <p class="contact-links">
                     <!--Advisors: <a href="http://www.cs.fudan.edu.cn/en/?page_id=2089">Ning Gu</a> and <a href="http://ecee.colorado.edu/~shangl/">Li Shang</a>
                     <br>-->
-                    <i class="fa fa-inbox"></i> <a href="mailto:dongshengli@fudan.edu.cn">Email</a>
+                    <i class="fas fa-inbox"></i> <a href="mailto:dongshengli@fudan.edu.cn">Email</a>
                     <!--<i class="fab fa-github"></i> <a href="https://github.com/ldscc/">Github</a>
 					<br>-->
 					<i class="fab fa-researchgate"></i> <a href="https://www.researchgate.net/profile/Dongsheng_Li7">ResearchGate</a>
@@ -327,15 +360,16 @@
 			</div>
 			<div id="hire">
                 <p> 
-                We are <em style="color:red">hiring researchers and interns</em>. Please email me <i class="fa fa-inbox"></i> <a href="mailto:dongsli@microsoft.com">dongsli@microsoft.com</a> if you are interested to join MSRA Shanghai.
+                We are <em style="color:red">hiring researchers and interns</em>. Please email me <i class="fas fa-inbox"></i> <a href="mailto:dongsli@microsoft.com">dongsli@microsoft.com</a> if you are interested to join MSRA Shanghai.
 				</p>
 			</div>
+			<h3 class="books-heading">Books</h3>
 			<div class="books-row">
 				<div class="book">
 					<a href="https://item.m.jd.com/product/13213419.html">
 						<img class="book-cover" src="./photoes/book_recsys_cn.png" alt="《推荐系统：前沿与实践》book cover" />
 					</a>
-					<p> <em style="color:black">Book</em>:
+					<p>
 					李东胜，练建勋，张乐，任侃，卢暾，邬涛，谢幸&nbsp;
 							<a href="https://item.m.jd.com/product/13213419.html">
 							《推荐系统：前沿与实践》</a>&nbsp;电子工业出版社，2022
@@ -345,7 +379,7 @@
 					<a href="https://www.springerprofessional.de/en/recommender-systems/26913100">
 						<img class="book-cover" src="./photoes/book_recsys_en.jpg" alt="Recommender Systems: Frontiers and Practices book cover" />
 					</a>
-					<p> <em style="color:black">Book</em>:
+					<p>
 					Dongsheng Li, Jianxun Lian, Le Zhang, Kan Ren, Tun Lu, Tao Wu, Xing Xie.
 							<a href="https://www.springerprofessional.de/en/recommender-systems/26913100">
 							Recommender Systems: Frontiers and Practices.</a>&nbsp;Springer. 2024
@@ -1639,7 +1673,7 @@
                     <li><a href="http://recmind.cn/papers/sma_icml16.pdf">Low-Rank
 							Matrix Approximation with Stability</a>
                         <br> Dongsheng Li, Chao Chen, Qin Lv, Junchi Yan, Stephen Chu, Li Shang
-                        <br> International Conference on Machine Learning <a href="http://icml.cc/2016/">(ICML)</a>, 2016 <a href="https://github.com/ldscc/StableMA"> <i class="fa fa-archive"></i> code
+                        <br> International Conference on Machine Learning <a href="http://icml.cc/2016/">(ICML)</a>, 2016 <a href="https://github.com/ldscc/StableMA"> <i class="fas fa-archive"></i> code
                         </a>
                         <br />                        
                     </li>
@@ -1664,7 +1698,7 @@
 							Accurate and Scalable Recommendation through Weighted and
 							Ensemble Matrix Approximation</a>
                         <br> Chao Chen*, Dongsheng Li*, Yingying Zhao, Qin Lv, Li Shang
-                        <br>International Conference on Research and Development on Information Retrieval <a href="http://sigir2015.org/">(SIGIR)</a>, 2015 <a href="https://github.com/ldscc/StableMA"> <i class="fa fa-archive"></i> code
+                        <br>International Conference on Research and Development on Information Retrieval <a href="http://sigir2015.org/">(SIGIR)</a>, 2015 <a href="https://github.com/ldscc/StableMA"> <i class="fas fa-archive"></i> code
                         </a>
                         <br />
                     </li>                    
@@ -2116,6 +2150,32 @@
         window.updatePublicationView = updateResultText;
         updateTabCounts();
         applyFilters();
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var navLinks = Array.prototype.slice.call(document.querySelectorAll('#main-nav .main-nav-link'));
+            var map = {};
+            navLinks.forEach(function(link) {
+                var m = (link.getAttribute('href') || '').match(/#([\w-]+)$/);
+                if (m) { map[m[1]] = link; }
+            });
+            var sections = Object.keys(map)
+                .map(function(id) { return document.getElementById(id); })
+                .filter(Boolean);
+            if (!('IntersectionObserver' in window) || !sections.length) { return; }
+
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(function(l) { l.classList.remove('active'); });
+                        if (map[entry.target.id]) { map[entry.target.id].classList.add('active'); }
+                    }
+                });
+            }, { rootMargin: '-40% 0px -55% 0px' });
+
+            sections.forEach(function(s) { observer.observe(s); });
         });
     </script>
 </body>
