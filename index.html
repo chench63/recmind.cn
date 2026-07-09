@@ -1965,9 +1965,18 @@
         const sourceItems = Array.from(publication.querySelectorAll('.tabcontent:not(#allpubs) ul li'));
         const allList = publication.querySelector('#allpubs ul');
         if (allList) {
-            sourceItems.forEach(function(li) {
-                allList.appendChild(li.cloneNode(true));
-            });
+            sourceItems
+                .map(function(li, index) {
+                    const y = getYear(li.innerText || li.textContent);
+                    return { li: li, year: y === 'Unknown' ? -1 : Number(y), index: index };
+                })
+                .sort(function(a, b) {
+                    if (b.year !== a.year) { return b.year - a.year; }
+                    return a.index - b.index;
+                })
+                .forEach(function(entry) {
+                    allList.appendChild(entry.li.cloneNode(true));
+                });
         }
 
         const lists = Array.from(publication.querySelectorAll('.tabcontent ul'));
